@@ -1,26 +1,26 @@
-# [ชื่อโปรเจกต์ของคุณ]
+# earnings-check — ผู้บริหารพูด vs งบจริง
 
 > การบ้าน AI Investor Alpha · Day 1 → Day 2
 
 | | |
 |---|---|
-| **ชื่อเล่น** | [ชื่อเล่น] |
-| **กลุ่ม** | [เลขกลุ่ม เช่น g03] · [ธีม เช่น หุ้นปันผลคุณภาพ] |
-| **โจทย์ 1 บรรทัด** | [อยากใช้ AI ช่วยตัดสินใจเรื่องอะไร] |
-| **ลิงก์ผลงาน** | [ลิงก์ dashboard หรือ "ดูใน output/"] |
-| **สถานะ** | ร่างแรก / พร้อมตรวจ |
+| **ชื่อเล่น** | Volk |
+| **กลุ่ม** | กลุ่ม 1 · อ่านงบ / Oppday / Earnings |
+| **โจทย์ 1 บรรทัด** | skill `/earnings-check` สรุปงบ ดึงเทป Oppday อัตโนมัติ แล้วตรวจว่าผู้บริหารพูดตรงกับตัวเลขในงบไหม ใช้ได้ทุกหุ้น ทดลองกับ SIS · SYNEX · ADVICE |
+| **ลิงก์ผลงาน** | ดูใน [output/](output/) |
+| **สถานะ** | ร่างแรก |
 
 ---
 
-## วิธีใช้ template นี้ (ทำครั้งเดียว)
+## ใช้งาน skill
 
-1. กดปุ่ม **Use this template** → **Create a new repository**
-2. ตั้งชื่อ repo เป็น `aia-hw-เลขกลุ่ม-ชื่อเล่น` เช่น `aia-hw-g03-ploy` (ภาษาอังกฤษตัวเล็ก ไม่มีเว้นวรรค GitHub ไม่รับตัวอักษรไทยในชื่อ repo)
-3. เลือก **Public** แล้วกด Create repository
-4. ใน Claude Desktop แท็บ Code เลือกโฟลเดอร์ workspace ของคอร์ส `AI Investor Alpha` แล้วพิมพ์ว่า `clone https://github.com/ชื่อบัญชีของคุณ/aia-hw-g03-ploy ไว้ใน homework และเพิ่ม homework/ ใน .gitignore` (เปลี่ยนเป็นชื่อ repo ของคุณ) การบ้านจะอยู่ที่ `AI Investor Alpha/homework/aia-hw-g03-ploy`
-   - ทำไมต้องเพิ่มใน `.gitignore`: workspace เป็น repo แบบ Private ส่วนการบ้านเป็น repo แบบ Public แยกกัน บรรทัดนี้กันไม่ให้สอง repo ปนกัน
-5. เปิดโฟลเดอร์ `homework/aia-hw-…` ที่ clone มาเป็นที่ทำงานใน Claude (สำคัญ: ถ้าเปิดโฟลเดอร์อื่น AI จะไม่เห็นกติกาใน repo นี้)
-6. แก้ตารางด้านบนให้เป็นของคุณ แล้วลบหัวข้อ "วิธีใช้ template นี้" ทิ้งได้
+```text
+/earnings-check SIS SYNEX ADVICE     # หลายตัว = ได้รายงานรายตัว + หน้าเทียบกลุ่ม
+/earnings-check CPALL                # ตัวเดียว
+```
+
+ต้องมี: Claude Code · Python 3.9+ · PyMuPDF · yt-dlp (ดึงคำบรรยาย Oppday) · ปลั๊กอิน stock-deepdive-lite (ใช้สคริปต์ดึงงบจาก ก.ล.ต. iDisc)
+ไฟล์ของ skill อยู่ที่ [.claude/skills/earnings-check/](.claude/skills/earnings-check/) และทีม agent ที่ [.claude/agents/](.claude/agents/)
 
 ## ไฟล์ใน repo นี้
 
