@@ -15,10 +15,6 @@ SYNEX,current_assets,สินทรัพย์หมุนเวียนร�
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2024,consolidated,prior,12232625315.0,บาท,12232.625,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J17,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,cur,13983531990.0,บาท,13983.532,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L17,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2024,separate,prior,12202066679.0,บาท,12202.067,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N17,Total current assets,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,cur,111465543.0,บาท,111.466,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H24,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,consolidated,prior,172819269.0,บาท,172.819,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J24,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,cur,111465543.0,บาท,111.466,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L24,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,separate,prior,172819269.0,บาท,172.819,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N24,Long-term loans,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,cur,16501070378.0,บาท,16501.07,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H32,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2024,consolidated,prior,14645392778.0,บาท,14645.393,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J32,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,separate,cur,16253709987.0,บาท,16253.71,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L32,Total assets,1
@@ -43,6 +39,10 @@ SYNEX,current_liabilities,หนี้สินหมุนเวียนรว
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2024,consolidated,prior,9852356823.0,บาท,9852.357,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J54,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,cur,11710645866.0,บาท,11710.646,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L54,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2024,separate,prior,10044293131.0,บาท,10044.293,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N54,Total current liabilities,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,cur,65796979.0,บาท,65.797,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H57,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,consolidated,prior,238408715.0,บาท,238.409,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J57,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,cur,65796979.0,บาท,65.797,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L57,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,separate,prior,238408715.0,บาท,238.409,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N57,Long-term borrowings from financial institutions,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,cur,8764043.0,บาท,8.764,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H58,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2024,consolidated,prior,14191294.0,บาท,14.191,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J58,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,cur,7859001.0,บาท,7.859,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L58,Lease liabilities,1
@@ -173,10 +173,6 @@ SYNEX,current_assets,สินทรัพย์หมุนเวียนร�
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,14003685.0,พันบาท,14003.685,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I18,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,13585353.0,พันบาท,13585.353,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K18,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,13983531.0,พันบาท,13983.531,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M18,Total current assets,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,consolidated,cur,95716.0,พันบาท,95.716,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,111466.0,พันบาท,111.466,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,separate,cur,95716.0,พันบาท,95.716,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,111466.0,พันบาท,111.466,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M25,Long-term loans,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-03-31,consolidated,cur,16117762.0,พันบาท,16117.762,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G33,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,prior,16501070.0,พันบาท,16501.07,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I33,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-03-31,separate,cur,15800044.0,พันบาท,15800.044,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K33,Total assets,1
@@ -201,6 +197,10 @@ SYNEX,current_liabilities,หนี้สินหมุนเวียนรว
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,11505184.0,พันบาท,11505.184,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I56,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,11099640.0,พันบาท,11099.64,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K56,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,11710646.0,พันบาท,11710.646,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M56,Total current liabilities,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,consolidated,cur,45608.0,พันบาท,45.608,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,65797.0,พันบาท,65.797,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,separate,cur,45608.0,พันบาท,45.608,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,65797.0,พันบาท,65.797,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M59,Long-term borrowings from financial institutions,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,consolidated,cur,8447.0,พันบาท,8.447,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G60,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,8764.0,พันบาท,8.764,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I60,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,separate,cur,7815.0,พันบาท,7.815,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K60,Lease liabilities,1
@@ -325,10 +325,6 @@ SYNEX,current_assets,สินทรัพย์หมุนเวียนร�
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,14003685.0,พันบาท,14003.685,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I18,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,15338345.0,พันบาท,15338.345,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K18,Total current assets,1
 SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,13983531.0,พันบาท,13983.531,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M18,Total current assets,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,consolidated,cur,79466.0,พันบาท,79.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,111466.0,พันบาท,111.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,separate,cur,79466.0,พันบาท,79.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K25,Long-term loans,1
-SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,111466.0,พันบาท,111.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M25,Long-term loans,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-06-30,consolidated,cur,17967256.0,พันบาท,17967.256,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G33,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,prior,16501070.0,พันบาท,16501.07,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I33,Total assets,1
 SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-06-30,separate,cur,17487960.0,พันบาท,17487.96,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K33,Total assets,1
@@ -353,6 +349,10 @@ SYNEX,current_liabilities,หนี้สินหมุนเวียนรว
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,11505184.0,พันบาท,11505.184,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I56,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,12946893.0,พันบาท,12946.893,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K56,Total current liabilities,1
 SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,11710646.0,พันบาท,11710.646,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M56,Total current liabilities,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,consolidated,cur,23104.0,พันบาท,23.104,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,65797.0,พันบาท,65.797,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,separate,cur,23104.0,พันบาท,23.104,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K59,Long-term borrowings from financial institutions,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,65797.0,พันบาท,65.797,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M59,Long-term borrowings from financial institutions,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,consolidated,cur,13162.0,พันบาท,13.162,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G60,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,8764.0,พันบาท,8.764,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I60,Lease liabilities,1
 SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,separate,cur,8256.0,พันบาท,8.256,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K60,Lease liabilities,1

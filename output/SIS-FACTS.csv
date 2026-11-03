@@ -27,10 +27,18 @@ SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-03-31,c
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,5068213.0,พันบาท,5068.213,,2026-05-15_FS_Q1-2569.xlsx,BS,I45,Trade and other current payables,1
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-03-31,separate,cur,5616937.0,พันบาท,5616.937,,2026-05-15_FS_Q1-2569.xlsx,BS,K45,Trade and other current payables,1
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,separate,prior,5067973.0,พันบาท,5067.973,,2026-05-15_FS_Q1-2569.xlsx,BS,M45,Trade and other current payables,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2026-03-31,consolidated,cur,0.0,พันบาท,0.0,,2026-05-15_FS_Q1-2569.xlsx,BS,G46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2025-12-31,consolidated,prior,0.0,พันบาท,0.0,,2026-05-15_FS_Q1-2569.xlsx,BS,I46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2026-03-31,separate,cur,385000.0,พันบาท,385.0,,2026-05-15_FS_Q1-2569.xlsx,BS,K46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2025-12-31,separate,prior,385000.0,พันบาท,385.0,,2026-05-15_FS_Q1-2569.xlsx,BS,M46,Short-term loans from related party,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,consolidated,cur,6817559.0,พันบาท,6817.559,,2026-05-15_FS_Q1-2569.xlsx,BS,G51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,6331718.0,พันบาท,6331.718,,2026-05-15_FS_Q1-2569.xlsx,BS,I51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,7200195.0,พันบาท,7200.195,,2026-05-15_FS_Q1-2569.xlsx,BS,K51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,6714610.0,พันบาท,6714.61,,2026-05-15_FS_Q1-2569.xlsx,BS,M51,Total current liabilities,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,consolidated,cur,140919.0,พันบาท,140.919,,2026-05-15_FS_Q1-2569.xlsx,BS,G53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,153971.0,พันบาท,153.971,,2026-05-15_FS_Q1-2569.xlsx,BS,I53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,separate,cur,140919.0,พันบาท,140.919,,2026-05-15_FS_Q1-2569.xlsx,BS,K53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,153971.0,พันบาท,153.971,,2026-05-15_FS_Q1-2569.xlsx,BS,M53,Lease liabilities - net of current portion,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,consolidated,cur,7090658.0,พันบาท,7090.658,,2026-05-15_FS_Q1-2569.xlsx,BS,G57,Total liabilities,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,6612046.0,พันบาท,6612.046,,2026-05-15_FS_Q1-2569.xlsx,BS,I57,Total liabilities,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,separate,cur,7473294.0,พันบาท,7473.294,,2026-05-15_FS_Q1-2569.xlsx,BS,K57,Total liabilities,1
@@ -143,10 +151,18 @@ SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-06-30,c
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,5068213.0,พันบาท,5068.213,,2026-08-07_FS_Q2-2569.xlsx,BS,I45,Trade and other current payables,1
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-06-30,separate,cur,6352957.0,พันบาท,6352.957,,2026-08-07_FS_Q2-2569.xlsx,BS,K45,Trade and other current payables,1
 SIS,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,separate,prior,5067973.0,พันบาท,5067.973,,2026-08-07_FS_Q2-2569.xlsx,BS,M45,Trade and other current payables,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2026-06-30,consolidated,cur,0.0,พันบาท,0.0,,2026-08-07_FS_Q2-2569.xlsx,BS,G46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2025-12-31,consolidated,prior,0.0,พันบาท,0.0,,2026-08-07_FS_Q2-2569.xlsx,BS,I46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2026-06-30,separate,cur,385000.0,พันบาท,385.0,,2026-08-07_FS_Q2-2569.xlsx,BS,K46,Short-term loans from related party,1
+SIS,st_debt_related,เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง,BS,BS,2025-12-31,separate,prior,385000.0,พันบาท,385.0,,2026-08-07_FS_Q2-2569.xlsx,BS,M46,Short-term loans from related party,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,consolidated,cur,8943200.0,พันบาท,8943.2,,2026-08-07_FS_Q2-2569.xlsx,BS,G51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,6331718.0,พันบาท,6331.718,,2026-08-07_FS_Q2-2569.xlsx,BS,I51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,9326611.0,พันบาท,9326.611,,2026-08-07_FS_Q2-2569.xlsx,BS,K51,Total current liabilities,1
 SIS,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,6714610.0,พันบาท,6714.61,,2026-08-07_FS_Q2-2569.xlsx,BS,M51,Total current liabilities,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,consolidated,cur,131979.0,พันบาท,131.979,,2026-08-07_FS_Q2-2569.xlsx,BS,G53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,153971.0,พันบาท,153.971,,2026-08-07_FS_Q2-2569.xlsx,BS,I53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,separate,cur,131979.0,พันบาท,131.979,,2026-08-07_FS_Q2-2569.xlsx,BS,K53,Lease liabilities - net of current portion,1
+SIS,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,153971.0,พันบาท,153.971,,2026-08-07_FS_Q2-2569.xlsx,BS,M53,Lease liabilities - net of current portion,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,consolidated,cur,9213674.0,พันบาท,9213.674,,2026-08-07_FS_Q2-2569.xlsx,BS,G57,Total liabilities,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,6612046.0,พันบาท,6612.046,,2026-08-07_FS_Q2-2569.xlsx,BS,I57,Total liabilities,1
 SIS,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,separate,cur,9597085.0,พันบาท,9597.085,,2026-08-07_FS_Q2-2569.xlsx,BS,K57,Total liabilities,1
@@ -199,6 +215,10 @@ SIS,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-06-
 SIS,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-06-30,consolidated,prior,-15825.0,พันบาท,15.825,ค่าลบในต้นฉบับ,2026-08-07_FS_Q2-2569.xlsx,PL,I23,Finance cost,1
 SIS,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-06-30,separate,cur,-12405.0,พันบาท,12.405,ค่าลบในต้นฉบับ,2026-08-07_FS_Q2-2569.xlsx,PL,K23,Finance cost,1
 SIS,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-06-30,separate,prior,-18140.0,พันบาท,18.14,ค่าลบในต้นฉบับ,2026-08-07_FS_Q2-2569.xlsx,PL,M23,Finance cost,1
+SIS,repossess_loss,ขาดทุนจากทรัพย์สินรอการขาย/รถยึด (ด้อยค่า+ขาย),PL,3M,2026-06-30,consolidated,cur,-1471.0,พันบาท,-1.471,,2026-08-07_FS_Q2-2569.xlsx,PL,G24,Loss on impairment of financial assets,1
+SIS,repossess_loss,ขาดทุนจากทรัพย์สินรอการขาย/รถยึด (ด้อยค่า+ขาย),PL,3M,2025-06-30,consolidated,prior,-9200.0,พันบาท,-9.2,,2026-08-07_FS_Q2-2569.xlsx,PL,I24,Loss on impairment of financial assets,1
+SIS,repossess_loss,ขาดทุนจากทรัพย์สินรอการขาย/รถยึด (ด้อยค่า+ขาย),PL,3M,2026-06-30,separate,cur,-1471.0,พันบาท,-1.471,,2026-08-07_FS_Q2-2569.xlsx,PL,K24,Loss on impairment of financial assets,1
+SIS,repossess_loss,ขาดทุนจากทรัพย์สินรอการขาย/รถยึด (ด้อยค่า+ขาย),PL,3M,2025-06-30,separate,prior,-9200.0,พันบาท,-9.2,,2026-08-07_FS_Q2-2569.xlsx,PL,M24,Loss on impairment of financial assets,1
 SIS,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-06-30,consolidated,cur,335141.0,พันบาท,335.141,,2026-08-07_FS_Q2-2569.xlsx,PL,G25,Profit before income tax expenses,1
 SIS,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2025-06-30,consolidated,prior,239142.0,พันบาท,239.142,,2026-08-07_FS_Q2-2569.xlsx,PL,I25,Profit before income tax expenses,1
 SIS,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-06-30,separate,cur,333478.0,พันบาท,333.478,,2026-08-07_FS_Q2-2569.xlsx,PL,K25,Profit before income tax expenses,1

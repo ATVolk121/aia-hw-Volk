@@ -7,7 +7,7 @@
 | ไฟล์ | คืออะไร |
 |---|---|
 | [peer-it-distribution-2026-11-03.html](peer-it-distribution-2026-11-03.html) | **หน้าเทียบกลุ่มจัดจำหน่ายไอที** SIS · SYNEX · ADVICE — กราฟ 11 ตัวชี้วัด + ตาราง + สิ่งที่ไม่ได้พูด |
-| [SIS-earnings-check-Q2-2569.html](SIS-earnings-check-Q2-2569.html) | รายงานรายตัว SIS |
+| [SIS-earnings-check-Q2-2569.html](SIS-earnings-check-Q2-2569.html) | รายงานรายตัว SIS (รอบ 6 เพิ่มตัวชี้วัดจากคลิปผู้สอน + ตรวจผู้บริหาร เช่นเดียวกับ SYNEX · ADVICE) |
 | [SYNEX-earnings-check-Q2-2569.html](SYNEX-earnings-check-Q2-2569.html) | รายงานรายตัว SYNEX |
 | [ADVICE-earnings-check-Q2-2569.html](ADVICE-earnings-check-Q2-2569.html) | รายงานรายตัว ADVICE |
 | [CPALL-earnings-check-Q2-2569.html](CPALL-earnings-check-Q2-2569.html) | รายงาน CPALL (ชุดทดสอบ — มีตัวเลขที่ตรวจด้วยมือไว้ก่อนแล้ว) |

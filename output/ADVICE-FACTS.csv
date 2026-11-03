@@ -35,6 +35,10 @@ ADVICE,current_liabilities,หนี้สินหมุนเวียนร�
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,2554380.0,พันบาท,2554.38,,2026-05-14_FS_Q1-2569.xlsx,BS,H44,Total current liabilities,1
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,2887481.0,พันบาท,2887.481,,2026-05-14_FS_Q1-2569.xlsx,BS,J44,Total current liabilities,1
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,2509488.0,พันบาท,2509.488,,2026-05-14_FS_Q1-2569.xlsx,BS,L44,Total current liabilities,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,consolidated,cur,126352.0,พันบาท,126.352,,2026-05-14_FS_Q1-2569.xlsx,BS,F46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,126781.0,พันบาท,126.781,,2026-05-14_FS_Q1-2569.xlsx,BS,H46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,separate,cur,32809.0,พันบาท,32.809,,2026-05-14_FS_Q1-2569.xlsx,BS,J46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,33308.0,พันบาท,33.308,,2026-05-14_FS_Q1-2569.xlsx,BS,L46,Lease liabilities - net of current portion,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,consolidated,cur,3193057.0,พันบาท,3193.057,,2026-05-14_FS_Q1-2569.xlsx,BS,F50,Total liabilities,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,2798284.0,พันบาท,2798.284,,2026-05-14_FS_Q1-2569.xlsx,BS,H50,Total liabilities,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,separate,cur,3012871.0,พันบาท,3012.871,,2026-05-14_FS_Q1-2569.xlsx,BS,J50,Total liabilities,1
@@ -155,6 +159,10 @@ ADVICE,current_liabilities,หนี้สินหมุนเวียนร�
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,2554380.0,พันบาท,2554.38,,2026-08-14_FS_Q2-2569.xlsx,BS,H44,Total current liabilities,1
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,3284416.0,พันบาท,3284.416,,2026-08-14_FS_Q2-2569.xlsx,BS,J44,Total current liabilities,1
 ADVICE,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,2509488.0,พันบาท,2509.488,,2026-08-14_FS_Q2-2569.xlsx,BS,L44,Total current liabilities,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,consolidated,cur,133160.0,พันบาท,133.16,,2026-08-14_FS_Q2-2569.xlsx,BS,F46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,126781.0,พันบาท,126.781,,2026-08-14_FS_Q2-2569.xlsx,BS,H46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,separate,cur,31730.0,พันบาท,31.73,,2026-08-14_FS_Q2-2569.xlsx,BS,J46,Lease liabilities - net of current portion,1
+ADVICE,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,33308.0,พันบาท,33.308,,2026-08-14_FS_Q2-2569.xlsx,BS,L46,Lease liabilities - net of current portion,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,consolidated,cur,3573271.0,พันบาท,3573.271,,2026-08-14_FS_Q2-2569.xlsx,BS,F50,Total liabilities,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,2798284.0,พันบาท,2798.284,,2026-08-14_FS_Q2-2569.xlsx,BS,H50,Total liabilities,1
 ADVICE,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,separate,cur,3402290.0,พันบาท,3402.29,,2026-08-14_FS_Q2-2569.xlsx,BS,J50,Total liabilities,1
