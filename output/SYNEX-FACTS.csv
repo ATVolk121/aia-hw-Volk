@@ -1,0 +1,543 @@
+﻿ticker,key,name_th,stmt,period_type,period_end,basis,which,value,unit,value_mb,sign_note,file,sheet,cell,label_raw,layer
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,consolidated,cur,90000258.0,บาท,90.0,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H10,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2024,consolidated,prior,77885329.0,บาท,77.885,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J10,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,separate,cur,87957199.0,บาท,87.957,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L10,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2024,separate,prior,74987247.0,บาท,74.987,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N10,Cash and cash equivalents,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,consolidated,cur,7026018519.0,บาท,7026.019,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H11,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2024,consolidated,prior,6403170021.0,บาท,6403.17,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J11,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,separate,cur,7035654054.0,บาท,7035.654,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L11,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2024,separate,prior,6412387060.0,บาท,6412.387,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N11,Trade accounts receivable,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,consolidated,cur,4797555190.0,บาท,4797.555,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H14,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2024,consolidated,prior,3816462654.0,บาท,3816.463,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J14,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,separate,cur,4781743832.0,บาท,4781.744,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L14,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2024,separate,prior,3805095051.0,บาท,3805.095,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N14,Inventories,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,consolidated,cur,14003685866.0,บาท,14003.686,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H17,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2024,consolidated,prior,12232625315.0,บาท,12232.625,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J17,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,cur,13983531990.0,บาท,13983.532,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L17,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2024,separate,prior,12202066679.0,บาท,12202.067,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N17,Total current assets,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,cur,111465543.0,บาท,111.466,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H24,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,consolidated,prior,172819269.0,บาท,172.819,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J24,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,cur,111465543.0,บาท,111.466,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L24,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2024,separate,prior,172819269.0,บาท,172.819,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N24,Long-term loans,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,cur,16501070378.0,บาท,16501.07,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H32,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2024,consolidated,prior,14645392778.0,บาท,14645.393,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J32,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,separate,cur,16253709987.0,บาท,16253.71,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L32,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2024,separate,prior,14518229274.0,บาท,14518.229,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N32,Total assets,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,consolidated,cur,7262178575.0,บาท,7262.179,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H45,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2024,consolidated,prior,6900766626.0,บาท,6900.767,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J45,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,separate,cur,7262178575.0,บาท,7262.179,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L45,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2024,separate,prior,6900766626.0,บาท,6900.767,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N45,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,consolidated,cur,3276785524.0,บาท,3276.786,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H47,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2024,consolidated,prior,1911717197.0,บาท,1911.717,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J47,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,separate,cur,3270988223.0,บาท,3270.988,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L47,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2024,separate,prior,1903703743.0,บาท,1903.704,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N47,Trade accounts payable,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,cur,87729306.0,บาท,87.729,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H50,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2024,consolidated,prior,219330694.0,บาท,219.331,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J50,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,cur,87729306.0,บาท,87.729,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L50,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2024,separate,prior,219330694.0,บาท,219.331,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N50,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,cur,6451222.0,บาท,6.451,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H51,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2024,consolidated,prior,9264229.0,บาท,9.264,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J51,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,cur,4344098.0,บาท,4.344,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L51,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2024,separate,prior,5522271.0,บาท,5.522,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N51,Current portion of lease liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,cur,11505184309.0,บาท,11505.184,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H54,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2024,consolidated,prior,9852356823.0,บาท,9852.357,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J54,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,cur,11710645866.0,บาท,11710.646,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L54,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2024,separate,prior,10044293131.0,บาท,10044.293,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N54,Total current liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,cur,8764043.0,บาท,8.764,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H58,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2024,consolidated,prior,14191294.0,บาท,14.191,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J58,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,cur,7859001.0,บาท,7.859,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L58,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2024,separate,prior,11661288.0,บาท,11.661,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N58,Lease liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,cur,11678322826.0,บาท,11678.323,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H64,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2024,consolidated,prior,10194403888.0,บาท,10194.404,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J64,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,separate,cur,11872573684.0,บาท,11872.574,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L64,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2024,separate,prior,10373146653.0,บาท,10373.147,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N64,Total liabilities,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,consolidated,cur,4818729135.0,บาท,4818.729,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H80,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2024,consolidated,prior,4446421654.0,บาท,4446.422,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J80,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,separate,cur,4381136303.0,บาท,4381.136,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L80,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2024,separate,prior,4145082621.0,บาท,4145.083,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N80,Equity attributable to owners of the parent,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,consolidated,cur,4822747552.0,บาท,4822.748,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,H82,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2024,consolidated,prior,4450988890.0,บาท,4450.989,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,J82,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,separate,cur,4381136303.0,บาท,4381.136,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,L82,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2024,separate,prior,4145082621.0,บาท,4145.083,,2026-02-24_FS_FY-2568.xlsx,BS-6-7,N82,Total equity,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,12M,2025-12-31,consolidated,cur,47301829573.0,บาท,47301.83,,2026-02-24_FS_FY-2568.xlsx,PL-8,C10,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,12M,2024-12-31,consolidated,prior,41802062730.0,บาท,41802.063,,2026-02-24_FS_FY-2568.xlsx,PL-8,E10,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,12M,2025-12-31,separate,cur,47275505586.0,บาท,47275.506,,2026-02-24_FS_FY-2568.xlsx,PL-8,G10,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,12M,2024-12-31,separate,prior,41776685980.0,บาท,41776.686,,2026-02-24_FS_FY-2568.xlsx,PL-8,I10,Revenue from sales of goods,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,12M,2025-12-31,consolidated,cur,91039970.0,บาท,91.04,,2026-02-24_FS_FY-2568.xlsx,PL-8,C11,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,12M,2024-12-31,consolidated,prior,101542878.0,บาท,101.543,,2026-02-24_FS_FY-2568.xlsx,PL-8,E11,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,12M,2025-12-31,separate,cur,14697669.0,บาท,14.698,,2026-02-24_FS_FY-2568.xlsx,PL-8,G11,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,12M,2024-12-31,separate,prior,20296336.0,บาท,20.296,,2026-02-24_FS_FY-2568.xlsx,PL-8,I11,Revenue from rendering of services,1
+SYNEX,total_revenue,รายได้รวม,PL,12M,2025-12-31,consolidated,cur,47392869543.0,บาท,47392.87,,2026-02-24_FS_FY-2568.xlsx,PL-8,C12,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,12M,2024-12-31,consolidated,prior,41903605608.0,บาท,41903.606,,2026-02-24_FS_FY-2568.xlsx,PL-8,E12,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,12M,2025-12-31,separate,cur,47290203255.0,บาท,47290.203,,2026-02-24_FS_FY-2568.xlsx,PL-8,G12,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,12M,2024-12-31,separate,prior,41796982316.0,บาท,41796.982,,2026-02-24_FS_FY-2568.xlsx,PL-8,I12,Total income,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,12M,2025-12-31,consolidated,cur,45532687778.0,บาท,45532.688,,2026-02-24_FS_FY-2568.xlsx,PL-8,C14,Costs of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,12M,2024-12-31,consolidated,prior,40124548580.0,บาท,40124.549,,2026-02-24_FS_FY-2568.xlsx,PL-8,E14,Costs of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,12M,2025-12-31,separate,cur,45526092813.0,บาท,45526.093,,2026-02-24_FS_FY-2568.xlsx,PL-8,G14,Costs of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,12M,2024-12-31,separate,prior,40118179253.0,บาท,40118.179,,2026-02-24_FS_FY-2568.xlsx,PL-8,I14,Costs of sales of goods,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,12M,2025-12-31,consolidated,cur,79052263.0,บาท,79.052,,2026-02-24_FS_FY-2568.xlsx,PL-8,C15,Costs of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,12M,2024-12-31,consolidated,prior,86833758.0,บาท,86.834,,2026-02-24_FS_FY-2568.xlsx,PL-8,E15,Costs of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,12M,2025-12-31,separate,cur,8200835.0,บาท,8.201,,2026-02-24_FS_FY-2568.xlsx,PL-8,G15,Costs of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,12M,2024-12-31,separate,prior,14051640.0,บาท,14.052,,2026-02-24_FS_FY-2568.xlsx,PL-8,I15,Costs of rendering of services,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,12M,2025-12-31,consolidated,cur,1781129502.0,บาท,1781.13,,2026-02-24_FS_FY-2568.xlsx,PL-8,C17,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,12M,2024-12-31,consolidated,prior,1692223270.0,บาท,1692.223,,2026-02-24_FS_FY-2568.xlsx,PL-8,E17,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,12M,2025-12-31,separate,cur,1755909607.0,บาท,1755.91,,2026-02-24_FS_FY-2568.xlsx,PL-8,G17,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,12M,2024-12-31,separate,prior,1664751423.0,บาท,1664.751,,2026-02-24_FS_FY-2568.xlsx,PL-8,I17,Gross profit,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,12M,2025-12-31,consolidated,cur,121058244.0,บาท,121.058,,2026-02-24_FS_FY-2568.xlsx,PL-8,C18,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,12M,2024-12-31,consolidated,prior,97970074.0,บาท,97.97,,2026-02-24_FS_FY-2568.xlsx,PL-8,E18,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,12M,2025-12-31,separate,cur,120859099.0,บาท,120.859,,2026-02-24_FS_FY-2568.xlsx,PL-8,G18,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,12M,2024-12-31,separate,prior,98047788.0,บาท,98.048,,2026-02-24_FS_FY-2568.xlsx,PL-8,I18,Gain on exchange rate,1
+SYNEX,other_income,รายได้อื่น,PL,12M,2025-12-31,consolidated,cur,79217208.0,บาท,79.217,,2026-02-24_FS_FY-2568.xlsx,PL-8,C21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,12M,2024-12-31,consolidated,prior,87178969.0,บาท,87.179,,2026-02-24_FS_FY-2568.xlsx,PL-8,E21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,12M,2025-12-31,separate,cur,99368937.0,บาท,99.369,,2026-02-24_FS_FY-2568.xlsx,PL-8,G21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,12M,2024-12-31,separate,prior,103453513.0,บาท,103.454,,2026-02-24_FS_FY-2568.xlsx,PL-8,I21,Other income,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,12M,2025-12-31,consolidated,cur,579905596.0,บาท,579.906,,2026-02-24_FS_FY-2568.xlsx,PL-8,C23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,12M,2024-12-31,consolidated,prior,517297789.0,บาท,517.298,,2026-02-24_FS_FY-2568.xlsx,PL-8,E23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,12M,2025-12-31,separate,cur,578625991.0,บาท,578.626,,2026-02-24_FS_FY-2568.xlsx,PL-8,G23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,12M,2024-12-31,separate,prior,515697530.0,บาท,515.698,,2026-02-24_FS_FY-2568.xlsx,PL-8,I23,Distribution costs,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,12M,2025-12-31,consolidated,cur,458029618.0,บาท,458.03,,2026-02-24_FS_FY-2568.xlsx,PL-8,C24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,12M,2024-12-31,consolidated,prior,498362823.0,บาท,498.363,,2026-02-24_FS_FY-2568.xlsx,PL-8,E24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,12M,2025-12-31,separate,cur,443747844.0,บาท,443.748,,2026-02-24_FS_FY-2568.xlsx,PL-8,G24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,12M,2024-12-31,separate,prior,487040627.0,บาท,487.041,,2026-02-24_FS_FY-2568.xlsx,PL-8,I24,Administrative expenses,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,12M,2025-12-31,consolidated,cur,152799826.0,บาท,152.8,,2026-02-24_FS_FY-2568.xlsx,PL-8,C27,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,12M,2024-12-31,consolidated,prior,184888302.0,บาท,184.888,,2026-02-24_FS_FY-2568.xlsx,PL-8,E27,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,12M,2025-12-31,separate,cur,156723429.0,บาท,156.723,,2026-02-24_FS_FY-2568.xlsx,PL-8,G27,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,12M,2024-12-31,separate,prior,189099610.0,บาท,189.1,,2026-02-24_FS_FY-2568.xlsx,PL-8,I27,Finance costs,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,12M,2025-12-31,consolidated,cur,142807089.0,บาท,142.807,,2026-02-24_FS_FY-2568.xlsx,PL-8,C30,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,12M,2024-12-31,consolidated,prior,56839226.0,บาท,56.839,,2026-02-24_FS_FY-2568.xlsx,PL-8,E30,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,12M,2025-12-31,separate,cur,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,PL-8,G30,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,12M,2024-12-31,separate,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,PL-8,I30,Share of profit of associates accounted for using equity method,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,12M,2025-12-31,consolidated,cur,926709453.0,บาท,926.709,,2026-02-24_FS_FY-2568.xlsx,PL-8,C31,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,12M,2024-12-31,consolidated,prior,752540935.0,บาท,752.541,,2026-02-24_FS_FY-2568.xlsx,PL-8,E31,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,12M,2025-12-31,separate,cur,790272829.0,บาท,790.273,,2026-02-24_FS_FY-2568.xlsx,PL-8,G31,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,12M,2024-12-31,separate,prior,693293267.0,บาท,693.293,,2026-02-24_FS_FY-2568.xlsx,PL-8,I31,Profit before income tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,12M,2025-12-31,consolidated,cur,-157471933.0,บาท,157.472,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,PL-8,C32,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,12M,2024-12-31,consolidated,prior,-125705627.0,บาท,125.706,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,PL-8,E32,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,12M,2025-12-31,separate,cur,-157325699.0,บาท,157.326,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,PL-8,G32,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,12M,2024-12-31,separate,prior,-124790721.0,บาท,124.791,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,PL-8,I32,Tax expense,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,12M,2025-12-31,consolidated,cur,769237520.0,บาท,769.238,,2026-02-24_FS_FY-2568.xlsx,PL-8,C33,Profit for the year,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,12M,2024-12-31,consolidated,prior,626835308.0,บาท,626.835,,2026-02-24_FS_FY-2568.xlsx,PL-8,E33,Profit for the year,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,12M,2025-12-31,separate,cur,632947130.0,บาท,632.947,,2026-02-24_FS_FY-2568.xlsx,PL-8,G33,Profit for the year,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,12M,2024-12-31,separate,prior,568502546.0,บาท,568.503,,2026-02-24_FS_FY-2568.xlsx,PL-8,I33,Profit for the year,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,12M,2025-12-31,consolidated,cur,769786339.0,บาท,769.786,,2026-02-24_FS_FY-2568.xlsx,PL-8,C58,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,12M,2024-12-31,consolidated,prior,627720634.0,บาท,627.721,,2026-02-24_FS_FY-2568.xlsx,PL-8,E58,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,12M,2025-12-31,separate,cur,632947130.0,บาท,632.947,,2026-02-24_FS_FY-2568.xlsx,PL-8,G58,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,12M,2024-12-31,separate,prior,568502546.0,บาท,568.503,,2026-02-24_FS_FY-2568.xlsx,PL-8,I58,Owners of parent,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,12M,2025-12-31,consolidated,cur,-548819.0,บาท,-0.549,,2026-02-24_FS_FY-2568.xlsx,PL-8,C59,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,12M,2024-12-31,consolidated,prior,-885326.0,บาท,-0.885,,2026-02-24_FS_FY-2568.xlsx,PL-8,E59,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,12M,2025-12-31,separate,cur,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,PL-8,G59,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,12M,2024-12-31,separate,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,PL-8,I59,Non-controlling interests,1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,12M,2025-12-31,consolidated,cur,0.9084512408041489,บาทต่อหุ้น,,,2026-02-24_FS_FY-2568.xlsx,PL-8,C67,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,12M,2024-12-31,consolidated,prior,0.7407946334517467,บาทต่อหุ้น,,,2026-02-24_FS_FY-2568.xlsx,PL-8,E67,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,12M,2025-12-31,separate,cur,0.7469626005040405,บาทต่อหุ้น,,,2026-02-24_FS_FY-2568.xlsx,PL-8,G67,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,12M,2024-12-31,separate,prior,0.6709093382781085,บาทต่อหุ้น,,,2026-02-24_FS_FY-2568.xlsx,PL-8,I67,Basic earnings per share (in Baht),1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,12M,2025-12-31,consolidated,cur,423535887.0,บาท,423.536,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G41,Net cash from (used in) operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,12M,2024-12-31,consolidated,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,I41,Net cash from (used in) operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,12M,2023-12-31,consolidated,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,M41,Net cash from (used in) operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,12M,2025-12-31,separate,cur,437985194.0,บาท,437.985,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O41,Net cash from (used in) operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,12M,2024-12-31,separate,prior,-608364610.0,บาท,-608.365,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q41,Net cash from (used in) operating activities,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,12M,2025-12-31,consolidated,cur,-68195946.0,บาท,68.196,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G48,"Acquisition of property, plant and equipment",1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,12M,2024-12-31,consolidated,prior,-13235463.0,บาท,13.235,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,K48,"Acquisition of property, plant and equipment",1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,12M,2025-12-31,separate,cur,-67341474.0,บาท,67.341,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O48,"Acquisition of property, plant and equipment",1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,12M,2024-12-31,separate,prior,-12910475.0,บาท,12.91,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q48,"Acquisition of property, plant and equipment",1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,12M,2025-12-31,consolidated,cur,63087978.0,บาท,63.088,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G54,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,12M,2024-12-31,consolidated,prior,-52093312.0,บาท,-52.093,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,K54,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,12M,2025-12-31,separate,cur,60091797.0,บาท,60.092,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O54,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,12M,2024-12-31,separate,prior,-18660590.0,บาท,-18.661,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q54,Net cash from (used in) investing activities,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,12M,2025-12-31,consolidated,cur,-372829514.0,บาท,372.83,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G71,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,12M,2024-12-31,consolidated,prior,-304998387.0,บาท,304.998,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,K71,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,12M,2025-12-31,separate,cur,-372829514.0,บาท,372.83,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O71,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,12M,2024-12-31,separate,prior,-304998387.0,บาท,304.998,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q71,Dividends paid to owners of the Company,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,12M,2025-12-31,consolidated,cur,-154974053.0,บาท,154.974,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G72,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,12M,2024-12-31,consolidated,prior,-186003922.0,บาท,186.004,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,K72,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,12M,2025-12-31,separate,cur,-159030897.0,บาท,159.031,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O72,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,12M,2024-12-31,separate,prior,-191147562.0,บาท,191.148,ค่าลบในต้นฉบับ,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q72,Interest paid,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,12M,2025-12-31,consolidated,cur,-474523015.0,บาท,-474.523,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,G73,Net cash from (used in) financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,12M,2024-12-31,consolidated,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,I73,Net cash from (used in) financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,12M,2020-12-31,consolidated,prior,0.0,บาท,0.0,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,M73,Net cash from (used in) financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,12M,2025-12-31,separate,cur,-485121118.0,บาท,-485.121,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,O73,Net cash from (used in) financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,12M,2024-12-31,separate,prior,567944181.0,บาท,567.944,,2026-02-24_FS_FY-2568.xlsx,Cashflow-13-14,Q73,Net cash from (used in) financing activities,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2026-03-31,consolidated,cur,91410.0,พันบาท,91.41,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,consolidated,prior,90000.0,พันบาท,90.0,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2026-03-31,separate,cur,82215.0,พันบาท,82.215,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,separate,prior,87957.0,พันบาท,87.957,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M11,Cash and cash equivalents,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2026-03-31,consolidated,cur,6911482.0,พันบาท,6911.482,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,7026019.0,พันบาท,7026.019,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2026-03-31,separate,cur,6913863.0,พันบาท,6913.863,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,separate,prior,7035654.0,พันบาท,7035.654,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M12,Trade accounts receivable,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2026-03-31,consolidated,cur,4717461.0,พันบาท,4717.461,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,consolidated,prior,4797555.0,พันบาท,4797.555,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2026-03-31,separate,cur,4694268.0,พันบาท,4694.268,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,separate,prior,4781744.0,พันบาท,4781.744,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M15,Inventories,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-03-31,consolidated,cur,13633451.0,พันบาท,13633.451,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,14003685.0,พันบาท,14003.685,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,13585353.0,พันบาท,13585.353,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,13983531.0,พันบาท,13983.531,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M18,Total current assets,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,consolidated,cur,95716.0,พันบาท,95.716,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,111466.0,พันบาท,111.466,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-03-31,separate,cur,95716.0,พันบาท,95.716,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,111466.0,พันบาท,111.466,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M25,Long-term loans,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-03-31,consolidated,cur,16117762.0,พันบาท,16117.762,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,prior,16501070.0,พันบาท,16501.07,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-03-31,separate,cur,15800044.0,พันบาท,15800.044,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,separate,prior,16253710.0,พันบาท,16253.71,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M33,Total assets,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2026-03-31,consolidated,cur,6623410.0,พันบาท,6623.41,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,consolidated,prior,7262179.0,พันบาท,7262.179,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2026-03-31,separate,cur,6623410.0,พันบาท,6623.41,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,separate,prior,7262179.0,พันบาท,7262.179,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-03-31,consolidated,cur,3453970.0,พันบาท,3453.97,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,3276786.0,พันบาท,3276.786,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-03-31,separate,cur,3448122.0,พันบาท,3448.122,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,separate,prior,3270989.0,พันบาท,3270.989,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M48,Trade accounts payable,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-03-31,consolidated,cur,91215.0,พันบาท,91.215,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,prior,87729.0,พันบาท,87.729,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-03-31,separate,cur,91215.0,พันบาท,91.215,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,prior,87729.0,พันบาท,87.729,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-03-31,consolidated,cur,6833.0,พันบาท,6.833,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,prior,6451.0,พันบาท,6.451,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-03-31,separate,cur,5193.0,พันบาท,5.193,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,prior,4344.0,พันบาท,4.344,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M52,Current portion of lease liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,consolidated,cur,10927593.0,พันบาท,10927.593,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,11505184.0,พันบาท,11505.184,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-03-31,separate,cur,11099640.0,พันบาท,11099.64,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,11710646.0,พันบาท,11710.646,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M56,Total current liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,consolidated,cur,8447.0,พันบาท,8.447,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,8764.0,พันบาท,8.764,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-03-31,separate,cur,7815.0,พันบาท,7.815,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,7859.0,พันบาท,7.859,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M60,Lease liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,consolidated,cur,11072235.0,พันบาท,11072.235,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,11678323.0,พันบาท,11678.323,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2026-03-31,separate,cur,11234184.0,พันบาท,11234.184,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,separate,prior,11872574.0,พันบาท,11872.574,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M66,Total liabilities,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2026-03-31,consolidated,cur,5041616.0,พันบาท,5041.616,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,consolidated,prior,4818729.0,พันบาท,4818.729,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2026-03-31,separate,cur,4565860.0,พันบาท,4565.86,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,separate,prior,4381136.0,พันบาท,4381.136,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M82,Equity attributable to owners of the parent,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2026-03-31,consolidated,cur,5045527.0,พันบาท,5045.527,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),G84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,consolidated,prior,4822747.0,พันบาท,4822.747,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),I84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2026-03-31,separate,cur,4565860.0,พันบาท,4565.86,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),K84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,separate,prior,4381136.0,พันบาท,4381.136,,2026-05-11_FS_Q1-2569.xlsx,BS (2-3),M84,Total equity,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2026-03-31,consolidated,cur,11294878.0,พันบาท,11294.878,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2025-03-31,consolidated,prior,11132630.0,พันบาท,11132.63,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2026-03-31,separate,cur,11284757.0,พันบาท,11284.757,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2025-03-31,separate,prior,11127455.0,พันบาท,11127.455,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I11,Revenue from sales of goods,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2026-03-31,consolidated,cur,17108.0,พันบาท,17.108,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2025-03-31,consolidated,prior,27097.0,พันบาท,27.097,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2026-03-31,separate,cur,2928.0,พันบาท,2.928,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2025-03-31,separate,prior,4253.0,พันบาท,4.253,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I12,Revenue from rendering of services,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2026-03-31,consolidated,cur,11311986.0,พันบาท,11311.986,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2025-03-31,consolidated,prior,11159727.0,พันบาท,11159.727,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2026-03-31,separate,cur,11287685.0,พันบาท,11287.685,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2025-03-31,separate,prior,11131708.0,พันบาท,11131.708,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I13,Total income,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2026-03-31,consolidated,cur,10858228.0,พันบาท,10858.228,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2025-03-31,consolidated,prior,10715075.0,พันบาท,10715.075,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2026-03-31,separate,cur,10849146.0,พันบาท,10849.146,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2025-03-31,separate,prior,10713911.0,พันบาท,10713.911,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I15,Cost of sales of goods,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2026-03-31,consolidated,cur,16355.0,พันบาท,16.355,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2025-03-31,consolidated,prior,19926.0,พันบาท,19.926,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2026-03-31,separate,cur,2084.0,พันบาท,2.084,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2025-03-31,separate,prior,2018.0,พันบาท,2.018,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I16,Cost of rendering of services,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2026-03-31,consolidated,cur,437403.0,พันบาท,437.403,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2025-03-31,consolidated,prior,424726.0,พันบาท,424.726,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2026-03-31,separate,cur,436455.0,พันบาท,436.455,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2025-03-31,separate,prior,415779.0,พันบาท,415.779,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I18,Gross profit,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2026-03-31,consolidated,cur,21589.0,พันบาท,21.589,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2025-03-31,consolidated,prior,16901.0,พันบาท,16.901,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2026-03-31,separate,cur,23803.0,พันบาท,23.803,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G21,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2025-03-31,separate,prior,21450.0,พันบาท,21.45,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I21,Other income,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2026-03-31,consolidated,cur,132906.0,พันบาท,132.906,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2025-03-31,consolidated,prior,147891.0,พันบาท,147.891,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2026-03-31,separate,cur,132407.0,พันบาท,132.407,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G23,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2025-03-31,separate,prior,147594.0,พันบาท,147.594,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I23,Distribution costs,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2026-03-31,consolidated,cur,124071.0,พันบาท,124.071,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2025-03-31,consolidated,prior,98860.0,พันบาท,98.86,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2026-03-31,separate,cur,119609.0,พันบาท,119.609,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G24,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2025-03-31,separate,prior,95989.0,พันบาท,95.989,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I24,Administrative expenses,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2026-03-31,consolidated,cur,2061.0,พันบาท,2.061,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C25,Loss (gain) on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2025-03-31,consolidated,prior,-22942.0,พันบาท,-22.942,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E25,Loss (gain) on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2026-03-31,separate,cur,2063.0,พันบาท,2.063,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G25,Loss (gain) on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2025-03-31,separate,prior,-22769.0,พันบาท,-22.769,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I25,Loss (gain) on exchange rate,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-03-31,consolidated,cur,26329.0,พันบาท,26.329,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-03-31,consolidated,prior,39611.0,พันบาท,39.611,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-03-31,separate,cur,27039.0,พันบาท,27.039,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-03-31,separate,prior,40834.0,พันบาท,40.834,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I26,Finance costs,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2026-03-31,consolidated,cur,46769.0,พันบาท,46.769,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2025-03-31,consolidated,prior,34613.0,พันบาท,34.613,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2026-03-31,separate,cur,0.0,พันบาท,0.0,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2025-03-31,separate,prior,0.0,พันบาท,0.0,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I28,Share of profit of associates accounted for using equity method,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-03-31,consolidated,cur,266418.0,พันบาท,266.418,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2025-03-31,consolidated,prior,227026.0,พันบาท,227.026,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-03-31,separate,cur,225164.0,พันบาท,225.164,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2025-03-31,separate,prior,189787.0,พันบาท,189.787,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I29,Profit before income tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2026-03-31,consolidated,cur,-45149.0,พันบาท,45.149,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2025-03-31,consolidated,prior,-39017.0,พันบาท,39.017,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2026-03-31,separate,cur,-45193.0,พันบาท,45.193,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2025-03-31,separate,prior,-38792.0,พันบาท,38.792,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I30,Tax expense,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2026-03-31,consolidated,cur,221269.0,พันบาท,221.269,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2025-03-31,consolidated,prior,188009.0,พันบาท,188.009,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2026-03-31,separate,cur,179971.0,พันบาท,179.971,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2025-03-31,separate,prior,150995.0,พันบาท,150.995,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I31,Profit for the period,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2026-03-31,consolidated,cur,221377.0,พันบาท,221.377,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2025-03-31,consolidated,prior,188217.0,พันบาท,188.217,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2026-03-31,separate,cur,179971.0,พันบาท,179.971,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2025-03-31,separate,prior,150995.0,พันบาท,150.995,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I66,Owners of parent,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2026-03-31,consolidated,cur,-108.0,พันบาท,-0.108,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2025-03-31,consolidated,prior,-208.0,พันบาท,-0.208,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2026-03-31,separate,cur,0.0,พันบาท,0.0,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2025-03-31,separate,prior,0.0,พันบาท,0.0,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I67,Non-controlling interests,1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2026-03-31,consolidated,cur,0.26112719372262827,บาทต่อหุ้น,,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),C75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2025-03-31,consolidated,prior,0.22187591829220368,บาทต่อหุ้น,,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),E75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2026-03-31,separate,cur,0.2123899967074246,บาทต่อหุ้น,,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),G75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2025-03-31,separate,prior,0.1781944177275093,บาทต่อหุ้น,,,2026-05-11_FS_Q1-2569.xlsx,PL9 (4-5),I75,Basic earnings per share (in Baht),1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,3M,2026-03-31,consolidated,cur,769205.0,พันบาท,769.205,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),G36,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,3M,2025-03-31,consolidated,prior,1017590.0,พันบาท,1017.59,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),I36,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,3M,2026-03-31,separate,cur,794646.0,พันบาท,794.646,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),K36,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,3M,2025-03-31,separate,prior,1024383.0,พันบาท,1024.383,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),M36,Net cash generated from operating activities,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,3M,2026-03-31,consolidated,cur,-22359.0,พันบาท,22.359,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),G54,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,3M,2025-03-31,consolidated,prior,-3414.0,พันบาท,3.414,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),I54,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,3M,2026-03-31,separate,cur,-22247.0,พันบาท,22.247,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),K54,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,3M,2025-03-31,separate,prior,-3168.0,พันบาท,3.168,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),M54,Acquisition of plant and equipment,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,3M,2026-03-31,consolidated,cur,-42642.0,พันบาท,-42.642,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),G59,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,3M,2025-03-31,consolidated,prior,44212.0,พันบาท,44.212,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),I59,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,3M,2026-03-31,separate,cur,-42088.0,พันบาท,-42.088,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),K59,Net cash from (used in) investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,3M,2025-03-31,separate,prior,44440.0,พันบาท,44.44,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),M59,Net cash from (used in) investing activities,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,3M,2026-03-31,consolidated,cur,-27175.0,พันบาท,27.175,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),G68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,3M,2025-03-31,consolidated,prior,-42120.0,พันบาท,42.12,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),I68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,3M,2026-03-31,separate,cur,-27904.0,พันบาท,27.904,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),K68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,3M,2025-03-31,separate,prior,-43384.0,พันบาท,43.384,ค่าลบในต้นฉบับ,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),M68,Interest paid,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,3M,2026-03-31,consolidated,cur,-693176.0,พันบาท,-693.176,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),G69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,3M,2025-03-31,consolidated,prior,-952117.0,พันบาท,-952.117,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),I69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,3M,2026-03-31,separate,cur,-726646.0,พันบาท,-726.646,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),K69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,3M,2025-03-31,separate,prior,-965413.0,พันบาท,-965.413,,2026-05-11_FS_Q1-2569.xlsx,CF (10-11),M69,Net cash used in financing activities,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2026-06-30,consolidated,cur,237380.0,พันบาท,237.38,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,consolidated,prior,90000.0,พันบาท,90.0,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2026-06-30,separate,cur,196384.0,พันบาท,196.384,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K11,Cash and cash equivalents,1
+SYNEX,cash,เงินสดและรายการเทียบเท่าเงินสด,BS,BS,2025-12-31,separate,prior,87957.0,พันบาท,87.957,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M11,Cash and cash equivalents,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2026-06-30,consolidated,cur,7382509.0,พันบาท,7382.509,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,7026019.0,พันบาท,7026.019,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2026-06-30,separate,cur,7383764.0,พันบาท,7383.764,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K12,Trade accounts receivable,1
+SYNEX,trade_receivables,ลูกหนี้การค้า,BS,BS,2025-12-31,separate,prior,7035654.0,พันบาท,7035.654,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M12,Trade accounts receivable,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2026-06-30,consolidated,cur,5748946.0,พันบาท,5748.946,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,consolidated,prior,4797555.0,พันบาท,4797.555,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2026-06-30,separate,cur,5642957.0,พันบาท,5642.957,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K15,Inventories,1
+SYNEX,inventories,สินค้าคงเหลือ,BS,BS,2025-12-31,separate,prior,4781744.0,พันบาท,4781.744,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M15,Inventories,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-06-30,consolidated,cur,15497335.0,พันบาท,15497.335,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,14003685.0,พันบาท,14003.685,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,15338345.0,พันบาท,15338.345,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K18,Total current assets,1
+SYNEX,current_assets,สินทรัพย์หมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,13983531.0,พันบาท,13983.531,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M18,Total current assets,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,consolidated,cur,79466.0,พันบาท,79.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,consolidated,prior,111466.0,พันบาท,111.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2026-06-30,separate,cur,79466.0,พันบาท,79.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K25,Long-term loans,1
+SYNEX,lt_debt,เงินกู้ระยะยาว,BS,BS,2025-12-31,separate,prior,111466.0,พันบาท,111.466,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M25,Long-term loans,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-06-30,consolidated,cur,17967256.0,พันบาท,17967.256,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,consolidated,prior,16501070.0,พันบาท,16501.07,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2026-06-30,separate,cur,17487960.0,พันบาท,17487.96,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K33,Total assets,1
+SYNEX,total_assets,สินทรัพย์รวม,BS,BS,2025-12-31,separate,prior,16253710.0,พันบาท,16253.71,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M33,Total assets,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2026-06-30,consolidated,cur,6934936.0,พันบาท,6934.936,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,consolidated,prior,7262179.0,พันบาท,7262.179,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2026-06-30,separate,cur,6934936.0,พันบาท,6934.936,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,st_debt,เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี,BS,BS,2025-12-31,separate,prior,7262179.0,พันบาท,7262.179,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M46,Bank overdrafts and short-term borrowings from financial institutions,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-06-30,consolidated,cur,4774780.0,พันบาท,4774.78,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,consolidated,prior,3276786.0,พันบาท,3276.786,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2026-06-30,separate,cur,4771266.0,พันบาท,4771.266,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K48,Trade accounts payable,1
+SYNEX,trade_payables,เจ้าหนี้การค้า,BS,BS,2025-12-31,separate,prior,3270989.0,พันบาท,3270.989,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M48,Trade accounts payable,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-06-30,consolidated,cur,92417.0,พันบาท,92.417,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,prior,87729.0,พันบาท,87.729,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-06-30,separate,cur,92417.0,พันบาท,92.417,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lt_debt_current,เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,prior,87729.0,พันบาท,87.729,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M51,Current portion of long-term borrowings from financial institutions,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-06-30,consolidated,cur,8405.0,พันบาท,8.405,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,consolidated,prior,6451.0,พันบาท,6.451,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2026-06-30,separate,cur,5573.0,พันบาท,5.573,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K52,Current portion of lease liabilities,1
+SYNEX,lease_current,หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี,BS,BS,2025-12-31,separate,prior,4344.0,พันบาท,4.344,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M52,Current portion of lease liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,consolidated,cur,12888273.0,พันบาท,12888.273,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,consolidated,prior,11505184.0,พันบาท,11505.184,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2026-06-30,separate,cur,12946893.0,พันบาท,12946.893,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K56,Total current liabilities,1
+SYNEX,current_liabilities,หนี้สินหมุนเวียนรวม,BS,BS,2025-12-31,separate,prior,11710646.0,พันบาท,11710.646,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M56,Total current liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,consolidated,cur,13162.0,พันบาท,13.162,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,consolidated,prior,8764.0,พันบาท,8.764,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2026-06-30,separate,cur,8256.0,พันบาท,8.256,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K60,Lease liabilities,1
+SYNEX,lease,หนี้สินตามสัญญาเช่า,BS,BS,2025-12-31,separate,prior,7859.0,พันบาท,7.859,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M60,Lease liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,consolidated,cur,13014412.0,พันบาท,13014.412,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,consolidated,prior,11678323.0,พันบาท,11678.323,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2026-06-30,separate,cur,13057126.0,พันบาท,13057.126,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K66,Total liabilities,1
+SYNEX,total_liabilities,หนี้สินรวม,BS,BS,2025-12-31,separate,prior,11872574.0,พันบาท,11872.574,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M66,Total liabilities,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2026-06-30,consolidated,cur,4947880.0,พันบาท,4947.88,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,consolidated,prior,4818729.0,พันบาท,4818.729,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2026-06-30,separate,cur,4430834.0,พันบาท,4430.834,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K82,Equity attributable to owners of the parent,1
+SYNEX,equity_parent,ส่วนของผู้ถือหุ้นบริษัทใหญ่,BS,BS,2025-12-31,separate,prior,4381136.0,พันบาท,4381.136,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M82,Equity attributable to owners of the parent,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2026-06-30,consolidated,cur,4952844.0,พันบาท,4952.844,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),G84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,consolidated,prior,4822747.0,พันบาท,4822.747,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),I84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2026-06-30,separate,cur,4430834.0,พันบาท,4430.834,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),K84,Total equity,1
+SYNEX,total_equity,ส่วนของผู้ถือหุ้นรวม,BS,BS,2025-12-31,separate,prior,4381136.0,พันบาท,4381.136,,2026-08-05_FS_Q2-2569.xlsx,BS (2-3),M84,Total equity,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2026-06-30,consolidated,cur,11791309.0,พันบาท,11791.309,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2025-06-30,consolidated,prior,11630916.0,พันบาท,11630.916,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2026-06-30,separate,cur,11725845.0,พันบาท,11725.845,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,3M,2025-06-30,separate,prior,11624843.0,พันบาท,11624.843,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I11,Revenue from sales of goods,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2026-06-30,consolidated,cur,19006.0,พันบาท,19.006,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2025-06-30,consolidated,prior,23809.0,พันบาท,23.809,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2026-06-30,separate,cur,2699.0,พันบาท,2.699,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,3M,2025-06-30,separate,prior,3193.0,พันบาท,3.193,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I12,Revenue from rendering of services,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2026-06-30,consolidated,cur,11810315.0,พันบาท,11810.315,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2025-06-30,consolidated,prior,11654725.0,พันบาท,11654.725,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2026-06-30,separate,cur,11728544.0,พันบาท,11728.544,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,3M,2025-06-30,separate,prior,11628036.0,พันบาท,11628.036,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I13,Total income,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2026-06-30,consolidated,cur,11320664.0,พันบาท,11320.664,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2025-06-30,consolidated,prior,11189869.0,พันบาท,11189.869,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2026-06-30,separate,cur,11258455.0,พันบาท,11258.455,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,3M,2025-06-30,separate,prior,11189541.0,พันบาท,11189.541,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I15,Cost of sales of goods,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2026-06-30,consolidated,cur,21485.0,พันบาท,21.485,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2025-06-30,consolidated,prior,18974.0,พันบาท,18.974,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2026-06-30,separate,cur,2113.0,พันบาท,2.113,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,3M,2025-06-30,separate,prior,2380.0,พันบาท,2.38,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I16,Cost of rendering of services,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2026-06-30,consolidated,cur,468166.0,พันบาท,468.166,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2025-06-30,consolidated,prior,445882.0,พันบาท,445.882,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2026-06-30,separate,cur,467976.0,พันบาท,467.976,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,3M,2025-06-30,separate,prior,436115.0,พันบาท,436.115,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I18,Gross profit,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2026-06-30,consolidated,cur,32036.0,พันบาท,32.036,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2025-06-30,consolidated,prior,55997.0,พันบาท,55.997,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2026-06-30,separate,cur,32034.0,พันบาท,32.034,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,3M,2025-06-30,separate,prior,55970.0,พันบาท,55.97,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I19,Gain on exchange rate,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2026-06-30,consolidated,cur,24328.0,พันบาท,24.328,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C20,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2025-06-30,consolidated,prior,25645.0,พันบาท,25.645,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E20,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2026-06-30,separate,cur,39435.0,พันบาท,39.435,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G20,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,3M,2025-06-30,separate,prior,36233.0,พันบาท,36.233,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I20,Other income,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2026-06-30,consolidated,cur,136478.0,พันบาท,136.478,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C22,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2025-06-30,consolidated,prior,147279.0,พันบาท,147.279,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E22,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2026-06-30,separate,cur,136145.0,พันบาท,136.145,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G22,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,3M,2025-06-30,separate,prior,146912.0,พันบาท,146.912,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I22,Distribution costs,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2026-06-30,consolidated,cur,143870.0,พันบาท,143.87,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C23,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2025-06-30,consolidated,prior,123208.0,พันบาท,123.208,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E23,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2026-06-30,separate,cur,141966.0,พันบาท,141.966,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G23,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,3M,2025-06-30,separate,prior,119403.0,พันบาท,119.403,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I23,Administrative expenses,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-06-30,consolidated,cur,24847.0,พันบาท,24.847,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-06-30,consolidated,prior,40418.0,พันบาท,40.418,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2026-06-30,separate,cur,25169.0,พันบาท,25.169,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,3M,2025-06-30,separate,prior,41444.0,พันบาท,41.444,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I26,Finance costs,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2026-06-30,consolidated,cur,50239.0,พันบาท,50.239,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2025-06-30,consolidated,prior,37744.0,พันบาท,37.744,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2026-06-30,separate,cur,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,3M,2025-06-30,separate,prior,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I28,Share of profit of associates accounted for using equity method,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-06-30,consolidated,cur,263357.0,พันบาท,263.357,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2025-06-30,consolidated,prior,223699.0,พันบาท,223.699,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2026-06-30,separate,cur,229948.0,พันบาท,229.948,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,3M,2025-06-30,separate,prior,189895.0,พันบาท,189.895,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I29,Profit before income tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2026-06-30,consolidated,cur,-39606.0,พันบาท,39.606,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2025-06-30,consolidated,prior,-33755.0,พันบาท,33.755,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2026-06-30,separate,cur,-40311.0,พันบาท,40.311,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,3M,2025-06-30,separate,prior,-33732.0,พันบาท,33.732,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I30,Tax expense,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2026-06-30,consolidated,cur,223751.0,พันบาท,223.751,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2025-06-30,consolidated,prior,189944.0,พันบาท,189.944,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2026-06-30,separate,cur,189637.0,พันบาท,189.637,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,3M,2025-06-30,separate,prior,156163.0,พันบาท,156.163,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I31,Profit for the period,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2026-06-30,consolidated,cur,222698.0,พันบาท,222.698,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2025-06-30,consolidated,prior,190158.0,พันบาท,190.158,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2026-06-30,separate,cur,189637.0,พันบาท,189.637,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,3M,2025-06-30,separate,prior,156163.0,พันบาท,156.163,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I66,Owners of parent,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2026-06-30,consolidated,cur,1053.0,พันบาท,1.053,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2025-06-30,consolidated,prior,-214.0,พันบาท,-0.214,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2026-06-30,separate,cur,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,3M,2025-06-30,separate,prior,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I67,Non-controlling interests,1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2026-06-30,consolidated,cur,0.26405628769792333,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),C75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2025-06-30,consolidated,prior,0.22415947866375724,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),E75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2026-06-30,separate,cur,0.2237971773541619,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),G75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,3M,2025-06-30,separate,prior,0.18429335312812367,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL3 (4-5),I75,Basic earnings per share (in Baht),1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,6M,2026-06-30,consolidated,cur,23086187.0,พันบาท,23086.187,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,6M,2025-06-30,consolidated,prior,22763546.0,พันบาท,22763.546,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,6M,2026-06-30,separate,cur,23010602.0,พันบาท,23010.602,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G11,Revenue from sales of goods,1
+SYNEX,revenue_sales,รายได้จากการขายและบริการ,PL,6M,2025-06-30,separate,prior,22752298.0,พันบาท,22752.298,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I11,Revenue from sales of goods,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,6M,2026-06-30,consolidated,cur,36114.0,พันบาท,36.114,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,6M,2025-06-30,consolidated,prior,50906.0,พันบาท,50.906,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,6M,2026-06-30,separate,cur,5627.0,พันบาท,5.627,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G12,Revenue from rendering of services,1
+SYNEX,revenue_services,รายได้จากการให้บริการ,PL,6M,2025-06-30,separate,prior,7446.0,พันบาท,7.446,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I12,Revenue from rendering of services,1
+SYNEX,total_revenue,รายได้รวม,PL,6M,2026-06-30,consolidated,cur,23122301.0,พันบาท,23122.301,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,6M,2025-06-30,consolidated,prior,22814452.0,พันบาท,22814.452,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,6M,2026-06-30,separate,cur,23016229.0,พันบาท,23016.229,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G13,Total income,1
+SYNEX,total_revenue,รายได้รวม,PL,6M,2025-06-30,separate,prior,22759744.0,พันบาท,22759.744,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I13,Total income,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,6M,2026-06-30,consolidated,cur,22178892.0,พันบาท,22178.892,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,6M,2025-06-30,consolidated,prior,21904944.0,พันบาท,21904.944,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,6M,2026-06-30,separate,cur,22107601.0,พันบาท,22107.601,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G15,Cost of sales of goods,1
+SYNEX,cogs,ต้นทุนขายและบริการ,PL,6M,2025-06-30,separate,prior,21903452.0,พันบาท,21903.452,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I15,Cost of sales of goods,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,6M,2026-06-30,consolidated,cur,37840.0,พันบาท,37.84,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,6M,2025-06-30,consolidated,prior,38900.0,พันบาท,38.9,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,6M,2026-06-30,separate,cur,4197.0,พันบาท,4.197,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G16,Cost of rendering of services,1
+SYNEX,cost_services,ต้นทุนการให้บริการ,PL,6M,2025-06-30,separate,prior,4398.0,พันบาท,4.398,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I16,Cost of rendering of services,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,6M,2026-06-30,consolidated,cur,905569.0,พันบาท,905.569,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,6M,2025-06-30,consolidated,prior,870608.0,พันบาท,870.608,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,6M,2026-06-30,separate,cur,904431.0,พันบาท,904.431,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G18,Gross profit,1
+SYNEX,gross_profit,กำไรขั้นต้น,PL,6M,2025-06-30,separate,prior,851894.0,พันบาท,851.894,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I18,Gross profit,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,6M,2026-06-30,consolidated,cur,29975.0,พันบาท,29.975,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,6M,2025-06-30,consolidated,prior,78939.0,พันบาท,78.939,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,6M,2026-06-30,separate,cur,29971.0,พันบาท,29.971,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G19,Gain on exchange rate,1
+SYNEX,fx_gain,กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน,PL,6M,2025-06-30,separate,prior,78739.0,พันบาท,78.739,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I19,Gain on exchange rate,1
+SYNEX,other_income,รายได้อื่น,PL,6M,2026-06-30,consolidated,cur,45917.0,พันบาท,45.917,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C22,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,6M,2025-06-30,consolidated,prior,42546.0,พันบาท,42.546,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E22,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,6M,2026-06-30,separate,cur,63238.0,พันบาท,63.238,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G22,Other income,1
+SYNEX,other_income,รายได้อื่น,PL,6M,2025-06-30,separate,prior,57683.0,พันบาท,57.683,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I22,Other income,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,6M,2026-06-30,consolidated,cur,269384.0,พันบาท,269.384,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C24,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,6M,2025-06-30,consolidated,prior,295170.0,พันบาท,295.17,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E24,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,6M,2026-06-30,separate,cur,268552.0,พันบาท,268.552,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G24,Distribution costs,1
+SYNEX,selling_exp,ค่าใช้จ่ายในการขาย,PL,6M,2025-06-30,separate,prior,294506.0,พันบาท,294.506,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I24,Distribution costs,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,6M,2026-06-30,consolidated,cur,267940.0,พันบาท,267.94,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C25,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,6M,2025-06-30,consolidated,prior,222068.0,พันบาท,222.068,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E25,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,6M,2026-06-30,separate,cur,261575.0,พันบาท,261.575,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G25,Administrative expenses,1
+SYNEX,admin_exp,ค่าใช้จ่ายในการบริหาร,PL,6M,2025-06-30,separate,prior,215392.0,พันบาท,215.392,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I25,Administrative expenses,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,6M,2026-06-30,consolidated,cur,51176.0,พันบาท,51.176,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,6M,2025-06-30,consolidated,prior,80029.0,พันบาท,80.029,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,6M,2026-06-30,separate,cur,52208.0,พันบาท,52.208,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G26,Finance costs,1
+SYNEX,finance_cost,ต้นทุนทางการเงิน,PL,6M,2025-06-30,separate,prior,82278.0,พันบาท,82.278,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I26,Finance costs,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,6M,2026-06-30,consolidated,cur,97008.0,พันบาท,97.008,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,6M,2025-06-30,consolidated,prior,72357.0,พันบาท,72.357,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,6M,2026-06-30,separate,cur,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G28,Share of profit of associates accounted for using equity method,1
+SYNEX,share_assoc,ส่วนแบ่งกำไรจากบริษัทร่วม/ร่วมค้า,PL,6M,2025-06-30,separate,prior,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I28,Share of profit of associates accounted for using equity method,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,6M,2026-06-30,consolidated,cur,529776.0,พันบาท,529.776,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,6M,2025-06-30,consolidated,prior,450725.0,พันบาท,450.725,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,6M,2026-06-30,separate,cur,455112.0,พันบาท,455.112,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G29,Profit before income tax expense,1
+SYNEX,pbt,กำไรก่อนภาษีเงินได้,PL,6M,2025-06-30,separate,prior,379682.0,พันบาท,379.682,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I29,Profit before income tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,6M,2026-06-30,consolidated,cur,-84754.0,พันบาท,84.754,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,6M,2025-06-30,consolidated,prior,-72772.0,พันบาท,72.772,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,6M,2026-06-30,separate,cur,-85503.0,พันบาท,85.503,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G30,Tax expense,1
+SYNEX,tax,ภาษีเงินได้,PL,6M,2025-06-30,separate,prior,-72524.0,พันบาท,72.524,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I30,Tax expense,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,6M,2026-06-30,consolidated,cur,445022.0,พันบาท,445.022,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,6M,2025-06-30,consolidated,prior,377953.0,พันบาท,377.953,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,6M,2026-06-30,separate,cur,369609.0,พันบาท,369.609,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G31,Profit for the period,1
+SYNEX,net_profit,กำไรสุทธิสำหรับงวด,PL,6M,2025-06-30,separate,prior,307158.0,พันบาท,307.158,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I31,Profit for the period,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,6M,2026-06-30,consolidated,cur,444077.0,พันบาท,444.077,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,6M,2025-06-30,consolidated,prior,378375.0,พันบาท,378.375,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,6M,2026-06-30,separate,cur,369609.0,พันบาท,369.609,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G66,Owners of parent,1
+SYNEX,np_parent,กำไรส่วนของบริษัทใหญ่,PL,6M,2025-06-30,separate,prior,307158.0,พันบาท,307.158,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I66,Owners of parent,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,6M,2026-06-30,consolidated,cur,945.0,พันบาท,0.945,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,6M,2025-06-30,consolidated,prior,-422.0,พันบาท,-0.422,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,6M,2026-06-30,separate,cur,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G67,Non-controlling interests,1
+SYNEX,np_nci,กำไรส่วนได้เสียที่ไม่มีอำนาจควบคุม,PL,6M,2025-06-30,separate,prior,0.0,พันบาท,0.0,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I67,Non-controlling interests,1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,6M,2026-06-30,consolidated,cur,0.5251858416896694,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),C75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,6M,2025-06-30,consolidated,prior,0.4460353969559609,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),E75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,6M,2026-06-30,separate,cur,0.43618835419614543,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),G75,Basic earnings per share (in Baht),1
+SYNEX,eps_basic,กำไรต่อหุ้นขั้นพื้นฐาน (บาท),PL,6M,2025-06-30,separate,prior,0.36248777085563294,บาทต่อหุ้น,,,2026-08-05_FS_Q2-2569.xlsx,PL6 (6-7),I75,Basic earnings per share (in Baht),1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,6M,2026-06-30,consolidated,cur,946701.0,พันบาท,946.701,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G37,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,6M,2025-06-30,consolidated,prior,217283.0,พันบาท,217.283,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I37,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,6M,2026-06-30,separate,cur,1054818.0,พันบาท,1054.818,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K37,Net cash generated from operating activities,1
+SYNEX,ocf,เงินสดสุทธิจากกิจกรรมดำเนินงาน,CF,6M,2025-06-30,separate,prior,239876.0,พันบาท,239.876,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M37,Net cash generated from operating activities,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,6M,2026-06-30,consolidated,cur,-29057.0,พันบาท,29.057,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G52,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,6M,2025-06-30,consolidated,prior,-17616.0,พันบาท,17.616,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I52,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,6M,2026-06-30,separate,cur,-28746.0,พันบาท,28.746,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K52,Acquisition of plant and equipment,1
+SYNEX,capex,เงินสดจ่ายซื้อที่ดิน อาคาร อุปกรณ์,CF,6M,2025-06-30,separate,prior,-17137.0,พันบาท,17.137,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M52,Acquisition of plant and equipment,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,6M,2026-06-30,consolidated,cur,33500.0,พันบาท,33.5,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G58,Net cash from investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,6M,2025-06-30,consolidated,prior,17153.0,พันบาท,17.153,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I58,Net cash from investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,6M,2026-06-30,separate,cur,33923.0,พันบาท,33.923,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K58,Net cash from investing activities,1
+SYNEX,icf,เงินสดสุทธิจากกิจกรรมลงทุน,CF,6M,2025-06-30,separate,prior,15653.0,พันบาท,15.653,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M58,Net cash from investing activities,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,6M,2026-06-30,consolidated,cur,-321989.0,พันบาท,321.989,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G67,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,6M,2025-06-30,consolidated,prior,-288096.0,พันบาท,288.096,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I67,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,6M,2026-06-30,separate,cur,-321989.0,พันบาท,321.989,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K67,Dividends paid to owners of the Company,1
+SYNEX,dividends_paid,เงินปันผลจ่าย,CF,6M,2025-06-30,separate,prior,-288096.0,พันบาท,288.096,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M67,Dividends paid to owners of the Company,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,6M,2026-06-30,consolidated,cur,-52239.0,พันบาท,52.239,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,6M,2025-06-30,consolidated,prior,-81823.0,พันบาท,81.823,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,6M,2026-06-30,separate,cur,-53316.0,พันบาท,53.316,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K68,Interest paid,1
+SYNEX,interest_paid,ดอกเบี้ยจ่าย,CF,6M,2025-06-30,separate,prior,-84148.0,พันบาท,84.148,ค่าลบในต้นฉบับ,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M68,Interest paid,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,6M,2026-06-30,consolidated,cur,-754447.0,พันบาท,-754.447,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),G69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,6M,2025-06-30,consolidated,prior,-106284.0,พันบาท,-106.284,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),I69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,6M,2026-06-30,separate,cur,-902983.0,พันบาท,-902.983,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),K69,Net cash used in financing activities,1
+SYNEX,fincf,เงินสดสุทธิจากกิจกรรมจัดหาเงิน,CF,6M,2025-06-30,separate,prior,-128674.0,พันบาท,-128.674,,2026-08-05_FS_Q2-2569.xlsx,CF (12-13),M69,Net cash used in financing activities,1
+SYNEX,ar_over12m,ลูกหนี้การค้าค้างชำระเกิน 12 เดือน,NOTE,BS,2026-06-30,consolidated,cur,489235.0,พันบาท,489.235,,2026-08-05_FS_Q2-2569_Notes.docx,หมายเหตุ 3 ลูกหนี้การค้า (ตารางอายุลูกหนี้),บรรทัด 94 ของ Notes.txt,Over 12 months,1 (AI เติมจากหมายเหตุ)
+SYNEX,ar_over12m,ลูกหนี้การค้าค้างชำระเกิน 12 เดือน,NOTE,BS,2025-12-31,consolidated,prior,435325.0,พันบาท,435.325,,2026-08-05_FS_Q2-2569_Notes.docx,หมายเหตุ 3 ลูกหนี้การค้า (ตารางอายุลูกหนี้),บรรทัด 94 ของ Notes.txt,Over 12 months,1 (AI เติมจากหมายเหตุ)
+SYNEX,ar_allowance,ค่าเผื่อผลขาดทุนด้านเครดิตที่คาดว่าจะเกิด (ลูกหนี้การค้า),NOTE,BS,2026-06-30,consolidated,cur,294279.0,พันบาท,294.279,,2026-08-05_FS_Q2-2569_Notes.docx,หมายเหตุ 3 ลูกหนี้การค้า (ตารางอายุลูกหนี้),บรรทัด 96 ของ Notes.txt,Less allowance for expected credit loss,1 (AI เติมจากหมายเหตุ)
+SYNEX,ar_allowance,ค่าเผื่อผลขาดทุนด้านเครดิตที่คาดว่าจะเกิด (ลูกหนี้การค้า),NOTE,BS,2025-12-31,consolidated,prior,269806.0,พันบาท,269.806,,2026-08-05_FS_Q2-2569_Notes.docx,หมายเหตุ 3 ลูกหนี้การค้า (ตารางอายุลูกหนี้),บรรทัด 96 ของ Notes.txt,Less allowance for expected credit loss,1 (AI เติมจากหมายเหตุ)

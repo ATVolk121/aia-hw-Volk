@@ -144,6 +144,12 @@ class Facts:
         if name == "sga_to_rev":
             return _ratio(self.sga(ptype, which, basis, file), self.revenue(ptype, which, basis, file),
                           "ค่าใช้จ่ายขาย+บริหาร ÷ รายได้ขาย/บริการ")
+        if name == "sga_to_total_revenue":
+            return _ratio(self.sga(ptype, which, basis, file), self.total_revenue(ptype, which, basis, file),
+                          "ค่าใช้จ่ายขาย+บริหาร ÷ รายได้รวม")
+        if name == "op_margin_total":
+            op = self.simple("operating_profit", ptype, which, basis, file) or self.simple("ebit", ptype, which, basis, file)
+            return _ratio(op, self.total_revenue(ptype, which, basis, file), "กำไรจากการดำเนินงาน ÷ รายได้รวม")
         if name == "net_margin":
             return _ratio(self.net_profit(ptype, which, basis, file), self.total_revenue(ptype, which, basis, file),
                           "กำไรสุทธิ ÷ รายได้รวม")

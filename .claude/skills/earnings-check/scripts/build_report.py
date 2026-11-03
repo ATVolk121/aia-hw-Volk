@@ -74,6 +74,7 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .up{color:var(--goodtx)}.down{color:var(--badtx)}
 .v{font-size:18px;white-space:nowrap}
 .quote{color:var(--ink)}
+td.qcol{min-width:340px}
 .reason{color:var(--ink2);font-size:13px}
 a{color:var(--s1)}
 .flag{border-left:4px solid var(--warn);padding:4px 0 4px 10px;margin:8px 0}
@@ -130,6 +131,7 @@ def md_to_html(md: str) -> str:
         t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
         t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', t)
         t = t.replace("[คำนวณ]", '<span class="calc">[คำนวณ]</span>')
+        t = t.replace("[คำพูด]", '<span class="calc">[คำพูดผู้บริหาร]</span>')
         if s.lstrip().startswith(("- ", "* ")):
             if not in_list:
                 out.append("<ul>")
@@ -220,7 +222,12 @@ def stock_report(a) -> int:
             c = {**c, "verdict": v["verdict_final"].strip(),
                  "reason": f"{v.get('reason', '').strip()} (ด่านตรวจแก้จาก {c['verdict']})"}
             if v.get("actual_checked"):
-                c["actual"] = v["actual_checked"]
+                full = v["actual_checked"].strip()
+                short = re.split(r"\s+\(|\s+·|;", full)[0].strip()
+                c["actual"] = short if len(short) <= 28 else short[:26] + "…"
+                c["actual_unit"] = ""
+                if full != short:
+                    c["reason"] += f" · ตัวเลขที่ด่านตรวจคิดซ้ำ: {full}"
         elif v and v.get("result") == "pass":
             c = {**c, "reason": c["reason"] + " · ด่านตรวจยืนยันแล้ว"}
         final.append(c)
@@ -256,8 +263,9 @@ def stock_report(a) -> int:
         c6, g6 = F.metric(m, "6M", "cur"), F.growth(m, "6M", None, "yoy")
         rows_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}{cell(pri)}{cell(yoy, True)}{cell(qoq, True)}"
                          f"{cell(c6)}{cell(g6, True)}</tr>")
-        check_lines.append(f"- {label}: {plain(cur)} · ปีก่อน {plain(pri)} · YoY {plain(yoy, True)} · "
-                           f"QoQ {plain(qoq, True)} · 6 เดือน {plain(c6)} ({plain(g6, True)})")
+        for tag, c in (("ไตรมาสนี้", cur), ("ปีก่อน", pri), ("YoY", yoy), ("QoQ", qoq), ("6 เดือน", c6), ("6 เดือน YoY", g6)):
+            if c is not None:
+                check_lines.append(f"- {label} · {tag}: {plain(c, tag.endswith(('YoY', 'QoQ')))}")
     bs_rows = [("เงินสด", "cash"), ("ลูกหนี้การค้า (และอื่น ๆ ถ้างบรวมบรรทัด)", "trade_receivables"),
                ("สินค้าคงเหลือ", "inventories"), ("เจ้าหนี้การค้า", "trade_payables"),
                ("เงินกู้ระยะสั้น", "st_debt"), ("หนี้สุทธิ (ไม่รวมสัญญาเช่า)", "net_debt"),
@@ -269,13 +277,15 @@ def stock_report(a) -> int:
             continue
         ch = F.growth(m, "BS", None, "yoy")
         bs_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}{cell(pri)}{cell(ch, True)}</tr>")
-        check_lines.append(f"- {label}: {plain(cur)} · สิ้นปีก่อน {plain(pri)} · เปลี่ยน {plain(ch, True)}")
+        for tag, c in (("สิ้นงวดนี้", cur), ("สิ้นปีก่อน", pri), ("เปลี่ยน", ch)):
+            if c is not None:
+                check_lines.append(f"- {label} · {tag}: {plain(c, tag == 'เปลี่ยน')}")
     wc_rows = [("วันสินค้าคงเหลือ", "inventory_days"), ("วันลูกหนี้", "receivable_days"),
                ("วันเจ้าหนี้", "payable_days"), ("วงจรเงินสด (วัน)", "ccc")]
     wc_html = []
     for label, m in wc_rows:
         cur, pri = F.metric(m, "3M", "cur"), F.metric(m, "3M", "prior")
-        wc_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}<td class='n note'>—</td></tr>" if cur else "")
+        wc_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}</tr>" if cur else "")
         if cur:
             check_lines.append(f"- {label}: {plain(cur)}")
     cf = [("เงินสดจากการดำเนินงาน (6 เดือน)", F.metric("ocf", "6M", "cur"), F.metric("ocf", "6M", "prior")),
@@ -287,7 +297,9 @@ def stock_report(a) -> int:
         if cur is None and pri is None:
             continue
         cf_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}{cell(pri)}</tr>")
-        check_lines.append(f"- {label}: {plain(cur)} · ปีก่อน {plain(pri)}")
+        for tag, c in (("งวดนี้", cur), ("ปีก่อน", pri)):
+            if c is not None:
+                check_lines.append(f"- {label} · {tag}: {plain(c)}")
 
     # ② ตารางคำพูด
     def loc_html(c):
@@ -301,7 +313,14 @@ def stock_report(a) -> int:
             return {"up": "เพิ่มขึ้น", "down": "ลดลง", "flat": "ทรงตัว"}.get(c.get("direction", ""), "—") \
                 if c["kind"] == "direction" else "—"
         u = c.get("unit") or ""
-        return f"{E(c['claimed'])} {E(u)}"
+        try:
+            v = float(c["claimed"])
+            shown = f"{v:,.0f}" if abs(v) >= 1000 else c["claimed"]
+        except ValueError:
+            shown = c["claimed"]
+        cmp_ = {">": "มากกว่า ", "<": "น้อยกว่า "}.get(c.get("comparator", ""), "")
+        approx = "~" if c.get("approx") == "y" else ""
+        return f"{E(cmp_)}{approx}{E(shown)} {E(u)}"
 
     def actual(c):
         if not c.get("actual"):
@@ -309,12 +328,17 @@ def stock_report(a) -> int:
         tip = f"{c.get('formula', '')} · {c.get('fact_refs', '')}"
         return f'<span tabindex="0" data-tip="{E(tip)}">{E(c["actual"])} {E(c.get("actual_unit", ""))}</span>'
 
+    def reason_html(text):
+        if len(text) <= 240:
+            return f'<div class="reason">{E(text)}</div>'
+        return (f'<div class="reason">{E(text[:220])}… <details><summary>อ่านต่อ</summary>{E(text)}</details></div>')
+
     claim_rows = []
     for c in checked:
         claim_rows.append(
             f'<tr><td class="v" title="{E(VERDICT_TH.get(c["verdict"], ""))}">{c["verdict"]}</td>'
             f'<td class="src">{loc_html(c)}</td>'
-            f'<td><div class="quote">“{E(c["quote"])}”</div><div class="reason">{E(c["reason"])}</div></td>'
+            f'<td class="qcol"><div class="quote">“{E(c["quote"])}”</div>{reason_html(c["reason"])}</td>'
             f'<td class="n">{said(c)}</td><td class="n">{actual(c)}</td></tr>')
     flags_html = []
     for u in unsaid:
@@ -365,7 +389,8 @@ def stock_report(a) -> int:
 <table><thead><tr><th>รายการ</th><th class="n">สิ้นงวดนี้</th><th class="n">สิ้นปีก่อน ({E(th_date(bs_prior))})</th>
 <th class="n">เปลี่ยน %</th></tr></thead><tbody>{"".join(bs_html)}</tbody></table>
 <h3>วันหมุนเวียน (คิดจากไตรมาสนี้ × 91 วัน)</h3>
-<table><thead><tr><th>รายการ</th><th class="n">ไตรมาสนี้</th><th class="n"></th></tr></thead><tbody>{"".join(wc_html)}</tbody></table>
+<table><thead><tr><th>รายการ</th><th class="n">ไตรมาสนี้</th></tr></thead><tbody>{"".join(wc_html)}</tbody></table>
+<p class="note">ยอดสิ้นงวด ÷ ยอดขายหรือต้นทุนของไตรมาส × 91 วัน — บริษัทอาจคิดด้วยยอดเฉลี่ย ตัวเลขจึงต่างจากที่บริษัทรายงานได้</p>
 <h3>กระแสเงินสด</h3>
 <table><thead><tr><th>รายการ</th><th class="n">งวดนี้</th><th class="n">ปีก่อน</th></tr></thead><tbody>{"".join(cf_html)}</tbody></table>
 <h3>อ่านงบแล้วเห็นอะไร</h3>{sec("สรุปงบ")}</section>
@@ -400,9 +425,10 @@ def stock_report(a) -> int:
     out.write_text(page, encoding="utf-8")
 
     # ไฟล์ตรวจตัวเลข: บทสรุปที่ AI เขียน + ตัวเลขทุกตัวในส่วนสรุปงบ (ไม่รวมคำพูดผู้บริหาร = สิ่งที่พูด ไม่ใช่ข้อเท็จจริง)
+    # บรรทัดที่กำกับ [คำพูด] = ตัวเลขที่ผู้บริหารพูด/เป้า (อ้างอิงเทปหรือ MD&A ใน claims.csv) ไม่ใช่ข้อเท็จจริงจากงบ → ไม่ตรวจกับ FACTS
     for k in ("บรรทัดเดียว", "สรุปงบ", "ผู้บริหารพูดตรงแค่ไหน", "ต้องเชื่ออะไร", "เงื่อนไขเปลี่ยนใจ"):
         if summ.get(k):
-            check_lines += ["", f"## {k}", summ[k]]
+            check_lines += ["", f"## {k}"] + [ln for ln in summ[k].splitlines() if "[คำพูด]" not in ln]
     (work / "report-check.md").write_text("\n".join(check_lines) + "\n", encoding="utf-8")
 
     def val(m, pt="3M", which="cur", mode=None):
@@ -449,8 +475,9 @@ def bar_chart(key, title, unit, cap, items):
     lo, hi = min(0.0, min(vals)), max(0.0, max(vals))
     span = (hi - lo) or 1.0
     W, label_w, val_w, row_h, bar_h = 340, 64, 62, 34, 20
-    plot = W - label_w - val_w
-    x0 = label_w + (0 - lo) / span * plot
+    left_pad = val_w if lo < 0 else 0          # ค่าติดลบ: เว้นที่ให้ป้ายตัวเลขด้านซ้าย ไม่ทับชื่อหุ้น
+    plot = W - label_w - val_w - left_pad
+    x0 = label_w + left_pad + (0 - lo) / span * plot
     h = row_h * len(items) + 8
     g = [f'<line x1="{x0:.1f}" y1="2" x2="{x0:.1f}" y2="{h - 4}" stroke="var(--axis)" stroke-width="1"/>']
     for i, (tk, color, v, tip) in enumerate(items):
@@ -509,10 +536,15 @@ def peer_page(a) -> int:
         cells = "".join(f'<td class="n" tabindex="0" data-tip="{E(t)}">{nfmt(v, unit) if v is not None else "—"}</td>'
                         for _, _, v, t in items)
         trows.append(f"<tr><td>{E(title)} <span class='src'>({E(unit)})</span></td>{cells}</tr>")
+    for mark, th in (("✅", "ตรง"), ("🟡", "ตรงแต่เลือกพูด / ต่างนิยาม"), ("❌", "ไม่ตรง"), ("⬜", "ตรวจไม่ได้"), ("🔭", "สัญญาอนาคต")):
+        cells = "".join(f'<td class="n">{d["counts"].get(mark, 0)}</td>' for _, d in datas)
+        trows.append(f"<tr><td>{mark} {E(th)} <span class='src'>(ข้อ)</span></td>{cells}</tr>")
     legend = "".join(f'<span><span class="key" style="background:{c}"></span>{E(d["ticker"])}</span>'
                      for (_, d), c in zip(datas, colors))
     heads = "".join(f'<th class="n">{E(d["ticker"])}</th>' for _, d in datas)
-    links = " · ".join(f'<a href="{E(d["report"])}">{E(d["ticker"])}</a>' for _, d in datas)
+    # รายงานรายตัวต้องก๊อปไว้โฟลเดอร์เดียวกับหน้านี้ ชื่อ <TICKER>-earnings-check-<งวด>.html
+    links = " · ".join(f'<a href="{E(d["ticker"])}-earnings-check-{E(d["period"])}.html">{E(d["ticker"])}</a>'
+                       for _, d in datas)
     unsaid = []
     for _, d in datas:
         for u in d.get("unsaid", []):

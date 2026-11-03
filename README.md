@@ -33,6 +33,23 @@
 | `help.md` | ติดตรงไหน 3 ข้อ ให้ผู้สอนเตรียมคำตอบ |
 | `AGENTS.md` | คำสั่งให้ AI ทุกค่ายทำงานใน repo นี้ (`CLAUDE.md` และ `GEMINI.md` ชี้มาที่ไฟล์นี้) |
 | `.claude/commands/save.md` | ขั้นตอนของคำสั่ง `/save` |
+| `.claude/skills/earnings-check/SKILL.md` | ขั้นตอนของ skill `/earnings-check` (11 ขั้น ตั้งแต่ดึงเอกสารถึงเข้าคลังความรู้) |
+| `.claude/skills/earnings-check/scripts/` | `fetch_mda.py` · `fetch_oppday.py` · `vault_intake.py` (ดึงเอกสาร) · `fs_facts.py` · `facts_lib.py` (ตัวเลขจากงบ) · `match_claims.py` (ตัดสินคำพูด) · `build_report.py` (รายงาน) |
+| `.claude/skills/earnings-check/reference/claims-format.md` | แบบฟอร์มบันทึกคำพูดผู้บริหาร 1 แถว = 1 คำกล่าว |
+| `.claude/skills/earnings-check/tests/test_cpall.py` | ชุดทดสอบตัวดึงตัวเลขกับงบ CPALL (ต้องผ่าน 50/50) |
+| `.claude/agents/kep-lek.md` · `check-jing.md` | ทีม agent: เก็บเลข (Sonnet ดึงคำพูด) · ตรวจจริง (Opus ตรวจซ้ำกับต้นฉบับ) |
+
+## skill ทำงานอย่างไร
+
+```text
+งบ .xlsx (ก.ล.ต. iDisc) ──► fs_facts.py ──► FACTS.csv  (ทุกตัวเลขมี ไฟล์·ชีต·เซลล์)
+MD&A (ก.ล.ต.) ─────────┐                              │
+เทป Oppday (YouTube) ──┴► kep-lek ──► claims.csv ──► match_claims.py ──► ✅🟡❌⬜🔭 + สิ่งที่ไม่ได้พูด
+                                                                         │
+                                          check-jing เปิดต้นฉบับตรวจซ้ำ ──┤
+                                                                         ▼
+                                   build_report.py ──► รายงานรายตัว + หน้าเทียบกลุ่ม (HTML)
+```
 
 ## ก่อนเริ่มทำการบ้านทุกครั้ง
 

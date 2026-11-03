@@ -43,6 +43,8 @@ ALT_METRIC = {
     "net_profit": [("profit_total", "กำไรสุทธิทั้งก้อน (รวมส่วนของผู้ถือหุ้นส่วนน้อย)")],
     "revenue": [("total_revenue", "รายได้รวม (รวมรายได้อื่น)")],
     "total_revenue": [("revenue", "รายได้จากการขายและบริการ (ไม่รวมรายได้อื่น)")],
+    "sga_to_rev": [("sga_to_total_revenue", "ค่าใช้จ่ายต่อรายได้รวม")],
+    "op_margin": [("op_margin_total", "กำไรจากการดำเนินงานต่อรายได้รวม")],
 }
 BASIS_TH = {"consolidated": "งบรวม", "separate": "งบเฉพาะกิจการ (งบเดี่ยว)", "single": "งบการเงิน"}
 OUT_FIELDS = ["id", "source", "loc", "link", "quote", "metric", "period", "kind", "compare", "claimed", "unit",
