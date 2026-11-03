@@ -111,6 +111,14 @@ METRICS = [
      r"(?i)^(revenues? from (the )?(sales?|sale of|contracts? with customers)|sales?( of goods| revenue)?$|sales and services|revenue from rendering|รายได้จากการขาย|รายได้จากสัญญาที่ทำกับลูกค้า|ขายสินค้า|ขาย$)", None, r"(?i)cost"),
     ("revenue_services", "รายได้จากการให้บริการ", "PL",
      r"(?i)^(service (income|revenues?)|revenues? from (rendering of )?services|services income|รายได้(จากการให้|ค่า)บริการ)", None, None),
+    # ธุรกิจสินเชื่อ (Non-bank)
+    ("interest_income", "รายได้ดอกเบี้ย (สินเชื่อ/เช่าซื้อ)", "PL",
+     r"(?i)^(interest income|interest and (hire[- ]purchase )?income|hire[- ]purchase( and loan)?( interest)? income|"
+     r"financial leases? interest income|loans? interest income|income from (loans to customers|hire[- ]purchase)|"
+     r"รายได้ดอกเบี้ย|รายได้จากการให้เช่าซื้อ|รายได้ตามสัญญาเช่าซื้อ)", None,
+     r"(?i)expense|จ่าย|related part|เงินฝาก|deposit|total"),
+    ("fee_income", "รายได้ค่าธรรมเนียมและบริการ", "PL",
+     r"(?i)^(fees? and services? income|fee income|fee and commission income|commission income|insurance (brokerage|commission)|รายได้ค่าธรรมเนียม|รายได้ค่านายหน้า)", None, r"(?i)expense"),
     ("other_income", "รายได้อื่น", "PL", r"(?i)^(other income|รายได้อื่น)", None, None),
     ("total_revenue", "รายได้รวม", "PL", r"(?i)^(total revenues?|total income|รวมรายได้)$", None, None),
     ("cogs", "ต้นทุนขายและบริการ", "PL",
@@ -120,7 +128,12 @@ METRICS = [
     ("gross_profit", "กำไรขั้นต้น", "PL", r"(?i)^(gross profit|กำไรขั้นต้น)", None, None),
     ("selling_exp", "ค่าใช้จ่ายในการขาย", "PL",
      r"(?i)^(distribution costs?|selling( and distribution)? expenses?|ต้นทุนในการจัดจำหน่าย|ค่าใช้จ่ายในการขาย)", None, None),
-    ("admin_exp", "ค่าใช้จ่ายในการบริหาร", "PL", r"(?i)^(administrative expenses?|ค่าใช้จ่ายในการบริหาร)", None, None),
+    ("admin_exp", "ค่าใช้จ่ายในการบริหาร", "PL",
+     r"(?i)^(administrative expenses?|services? and administrative expenses?|operating expenses|ค่าใช้จ่ายในการบริหาร|ค่าใช้จ่ายในการให้บริการและบริหาร|ค่าใช้จ่ายในการดำเนินงาน)", None, None),
+    ("derecog_loss", "ขาดทุนจากการตัดรายการสินทรัพย์ทางการเงิน (ขาย/ตัดหนี้)", "PL",
+     r"(?i)^(loss(es)?( arising)? (from|on) (the )?derecognition|ขาดทุนจากการตัดรายการ)", None, None),
+    ("repossess_loss", "ขาดทุนจากทรัพย์สินรอการขาย/รถยึด (ด้อยค่า+ขาย)", "PL",
+     r"(?i)^(loss(es)?( \(gain\))? (from|on) (the )?(impairment|diminution|sale|disposal).{0,40}(foreclosed|repossessed|assets)|ขาดทุนจาก.{0,20}(ทรัพย์สินรอการขาย|รถยึด))", None, None),
     ("ecl", "ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิด", "PL",
      r"(?i)(expected credit loss|impairment loss.{0,40}(receivable|financial)|ผลขาดทุนด้านเครดิต)", None, None),
     ("fx_gain", "กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน", "PL",
@@ -147,31 +160,43 @@ METRICS = [
      r"(?i)(basic earnings( \(loss\))? per share|earnings( \(loss\))? per share.{0,20}basic|กำไร.{0,12}ต่อหุ้นขั้นพื้นฐาน|^basic)", None, r"(?i)diluted|ปรับลด"),
     # BS
     ("cash", "เงินสดและรายการเทียบเท่าเงินสด", "BS", r"(?i)^(cash and cash equivalents|เงินสดและรายการเทียบเท่าเงินสด)", None, None),
+    # พอร์ตสินเชื่อ (Non-bank) — ยอดสุทธิหลังหักค่าเผื่อ แยกส่วนถึงกำหนดใน 1 ปี / ระยะยาว
+    ("loans_current", "ลูกหนี้เงินให้สินเชื่อ/เช่าซื้อ ส่วนถึงกำหนดใน 1 ปี (สุทธิ)", "BS",
+     r"(?i)^(current portion of (loan receivables|loans to customers|hire[- ]purchase( and loan)? receivables|loans? receivables?|receivables? under hire[- ]purchase|financial leases? receivables)|"
+     r"(loan receivables|loans to customers|hire[- ]purchase( and loan)? receivables).{0,40}(within one year|current portion)|"
+     r"ลูกหนี้(เงินให้สินเชื่อ|ตามสัญญาเช่าซื้อ|เช่าซื้อ).{0,40}(ภายในหนึ่งปี|หมุนเวียน))", None, r"(?i)related|กิจการที่เกี่ยวข้อง|short-term loans|net of current portion|ไม่หมุนเวียน|สุทธิจากส่วนที่ถึงกำหนด"),
+    ("loans_noncurrent", "ลูกหนี้เงินให้สินเชื่อ/เช่าซื้อ ระยะยาว (สุทธิ)", "BS",
+     r"(?i)^((loan receivables|loans to customers|hire[- ]purchase( and loan)? receivables|loans? receivables?|receivables? under hire[- ]purchase)|"
+     r"financial leases? receivables|ลูกหนี้(เงินให้สินเชื่อ|ตามสัญญาเช่าซื้อ|เช่าซื้อ|ตามสัญญาเช่าการเงิน))", None,
+     r"(?i)^current portion|within one year|related|กิจการที่เกี่ยวข้อง|ภายในหนึ่งปี|short-term|other|^total"),
     ("trade_receivables", "ลูกหนี้การค้า", "BS",
      r"(?i)^(trade (accounts )?receivables?|trade and other (current )?receivables|ลูกหนี้การค้า)", None, r"(?i)non-current|ไม่หมุนเวียน"),
     ("inventories", "สินค้าคงเหลือ", "BS", r"(?i)^(inventor(y|ies)|สินค้าคงเหลือ)", None, None),
     ("current_assets", "สินทรัพย์หมุนเวียนรวม", "BS", r"(?i)^(total current assets|รวมสินทรัพย์หมุนเวียน)", None, None),
     ("total_assets", "สินทรัพย์รวม", "BS", r"(?i)^(total assets|รวมสินทรัพย์)$", None, None),
     ("st_debt", "เงินกู้ระยะสั้น/เงินเบิกเกินบัญชี", "BS",
-     r"(?i)^(bank overdrafts?|short-term (loans|borrowings) from (financial institutions|banks?)|เงินเบิกเกินบัญชี|เงินกู้ยืมระยะสั้นจากสถาบันการเงิน)", None, None),
+     r"(?i)^(bank overdrafts?|short-term (loans|borrowings) from (a |the )?(financial institutions?|banks?)|เงินเบิกเกินบัญชี|เงินกู้ยืมระยะสั้นจากสถาบันการเงิน)", None, None),
+    ("st_debt_related", "เงินกู้ระยะสั้นจากผู้ถือหุ้นใหญ่/กิจการที่เกี่ยวข้อง", "BS",
+     r"(?i)^(short-term (loans|borrowings) from (a |an )?(major shareholders?|(un)?related (parties|party|persons|companies)|parent( company)?)|เงินกู้ยืมระยะสั้นจาก(ผู้ถือหุ้นใหญ่|กิจการที่เกี่ยวข้องกัน|บริษัทใหญ่))", None, None),
     ("trade_payables", "เจ้าหนี้การค้า", "BS",
      r"(?i)^(trade (accounts )?payables?|trade and other (current )?payables|เจ้าหนี้การค้า)", None, r"(?i)non-current|ไม่หมุนเวียน"),
     ("debentures_current", "หุ้นกู้ส่วนที่ถึงกำหนดใน 1 ปี", "BS",
-     r"(?i)^(current portion of debentures|หุ้นกู้.{0,30}(ภายในหนึ่งปี|หมุนเวียน))", None, None),
+     r"(?i)^(current portion of ((senior|subordinated|unsubordinated|unsecured|secured)( and)? )*debentures?|หุ้นกู้.{0,30}(ภายในหนึ่งปี|หมุนเวียน))", None, None),
     ("lt_debt_current", "เงินกู้ระยะยาวส่วนที่ถึงกำหนดใน 1 ปี", "BS",
      r"(?i)^(current portion of long-term (loans|borrowings)|เงินกู้ยืมระยะยาว.{0,40}(ภายในหนึ่งปี|หมุนเวียน))", None, None),
     ("lease_current", "หนี้สินตามสัญญาเช่าส่วนที่ถึงกำหนดใน 1 ปี", "BS",
      r"(?i)^(current portion of lease liabilities|หนี้สินตามสัญญาเช่า.{0,40}(ภายในหนึ่งปี|หมุนเวียน))", None, None),
     ("current_liabilities", "หนี้สินหมุนเวียนรวม", "BS", r"(?i)^(total current liabilities|รวมหนี้สินหมุนเวียน)", None, None),
-    ("debentures", "หุ้นกู้ระยะยาว", "BS", r"(?i)^(debentures?|หุ้นกู้)$", None, None),
+    ("debentures", "หุ้นกู้ระยะยาว", "BS",
+     r"(?i)^(((senior|subordinated|unsubordinated|unsecured|secured)( and)? )*debentures?( - net( of current portion)?| net of current portion)?|หุ้นกู้(สุทธิ)?)$", None, None),
     ("lt_debt", "เงินกู้ระยะยาว", "BS",
-     r"(?i)^(long-term (loans|borrowings)|เงินกู้ยืมระยะยาว)", None, r"(?i)current portion|ภายในหนึ่งปี"),
-    ("lease", "หนี้สินตามสัญญาเช่า", "BS", r"(?i)^(lease liabilities|หนี้สินตามสัญญาเช่า)", None, r"(?i)current portion|ภายในหนึ่งปี"),
+     r"(?i)^(long-term (loans|borrowings)|เงินกู้ยืมระยะยาว)", None, r"(?i)^current portion|ภายในหนึ่งปี"),
+    ("lease", "หนี้สินตามสัญญาเช่า", "BS", r"(?i)^(lease liabilities|หนี้สินตามสัญญาเช่า)", None, r"(?i)^current portion|ภายในหนึ่งปี"),
     ("total_liabilities", "หนี้สินรวม", "BS", r"(?i)^(total liabilities|รวมหนี้สิน)$", None, None),
     ("equity_parent", "ส่วนของผู้ถือหุ้นบริษัทใหญ่", "BS",
      r"(?i)^((total )?equity attributable to (owners|equity holders|shareholders)|ส่วนของ(ผู้เป็นเจ้าของ|ผู้ถือหุ้น)ของบริษัท|รวมส่วนของ(ผู้เป็นเจ้าของ|ผู้ถือหุ้น)ของบริษัท)", None, None),
     ("total_equity", "ส่วนของผู้ถือหุ้นรวม", "BS",
-     r"(?i)^(total (shareholders'? |owners'? )?equity|รวมส่วนของ(ผู้ถือหุ้น|เจ้าของ))$", None, None),
+     r"(?i)^(total (shareholders['’]? |owners['’]? )?equity|รวมส่วนของ(ผู้ถือหุ้น|เจ้าของ))$", None, None),
     # CF
     ("ocf", "เงินสดสุทธิจากกิจกรรมดำเนินงาน", "CF",
      r"(?i)^(net cash( flows?)?.{0,30}operating activities|เงินสดสุทธิ.{0,40}กิจกรรมดำเนินงาน)", None, None),
@@ -184,7 +209,16 @@ METRICS = [
     ("fincf", "เงินสดสุทธิจากกิจกรรมจัดหาเงิน", "CF",
      r"(?i)^(net cash.{0,35}financing activities|เงินสดสุทธิ.{0,40}กิจกรรมจัดหาเงิน)", None, None),
 ]
-EXPENSE = {"cogs", "cost_services", "selling_exp", "admin_exp", "finance_cost", "tax", "capex", "dividends_paid", "interest_paid"}
+# บรรทัดที่ต้อง "รวมทุกบรรทัด" ในช่วงเดียวกัน (บริษัทสินเชื่อแยกประเภทลูกหนี้/ดอกเบี้ยรับหลายบรรทัด)
+SUM_KEYS = {"interest_income", "loans_current", "loans_noncurrent",
+            "st_debt", "st_debt_related", "lt_debt", "lt_debt_current", "debentures", "debentures_current"}
+# บรรทัดย่อยที่ไม่มีชื่อรายการในตัว (ต้องอ่านจากหัวข้อด้านบน) เช่น THANI: "Current portion of debentures" → "Related parties" / "Unrelated parties"
+SUBROW = re.compile(r"(?i)^((un)?related (parties|party|persons|companies)( and (un)?related (parties|persons))?|unrelated persons and unrelated parties|others?|บุคคลหรือกิจการ(ที่เกี่ยวข้องกัน|อื่น)|กิจการที่เกี่ยวข้องกัน|กิจการที่ไม่เกี่ยวข้องกัน)$")
+# หัวข้อที่บอกว่าเริ่มฝั่งหนี้สินแล้ว · รายการเงินกู้ที่นับได้เฉพาะฝั่งหนี้สิน
+LIAB_HDR = re.compile(r"(?i)^(liabilities|current liabilities|หนี้สินและส่วนของผู้ถือหุ้น|หนี้สินหมุนเวียน|total assets$|รวมสินทรัพย์$)")
+LIAB_ONLY = {"st_debt", "st_debt_related", "lt_debt", "lt_debt_current", "debentures", "debentures_current",
+             "lease", "lease_current"}
+EXPENSE = {"ecl", "derecog_loss", "cogs", "cost_services", "selling_exp", "admin_exp", "finance_cost", "tax", "capex", "dividends_paid", "interest_paid"}
 COMPILED = [(k, th, st, re.compile(rx), re.compile(cx) if cx else None, re.compile(ex) if ex else None)
             for k, th, st, rx, cx, ex in METRICS]
 
@@ -384,12 +418,18 @@ def extract(path: Path, ticker: str):
                 continue
             first_vc = min(c["col"] for c in blk["cols"])
             seen = set()
+            acc = {}   # (รหัส, คอลัมน์) → fact ของช่วงนี้ ใช้รวมบรรทัดของ SUM_KEYS
             ctx, pending = "", []   # pending = แถวข้อความติดกันก่อนแถวตัวเลข (ป้ายที่ยาวหลายบรรทัด)
+            last_head = ""          # หัวข้อบรรทัดล่าสุด (เช่น "Short-term loans from financial institutions") ใช้กับแถวย่อย
+            # อยู่ฝั่งหนี้สินแล้วหรือยัง — กันไม่ให้ "เงินให้กู้ยืมระยะยาวแก่กิจการที่เกี่ยวข้อง" (ฝั่งสินทรัพย์) ถูกนับเป็นเงินกู้
+            in_liab = bool(LIAB_HDR.search(blk.get("head_txt", "")))
             for rn in blk["rows"]:
                 cells = rows[rn]
                 label = " ".join(v for c, (v, isn) in sorted(cells.items())
                                  if c < first_vc and c != blk["note_col"] and not isn
                                  and not re.fullmatch(r"[\d,\s.]+", v)).strip()
+                # บางบริษัทมีคอลัมน์อ้างอิงมาตรฐานบัญชีหน้าป้าย เช่น "TAS 1.82.1 Total revenue" → ตัดออก
+                label = re.sub(r"^(?:(?:TAS|TFRS|IAS|IFRS|TFRIC)\s*[\d.,]+[ก-๙a-zA-Z.\d]*\s*)+", "", label).strip()
                 vals = {}
                 for col in blk["cols"]:
                     cell = cells.get(col["col"])
@@ -397,10 +437,13 @@ def extract(path: Path, ticker: str):
                         n = parse_num(*cell)
                         if n is not None:
                             vals[col["col"]] = n
+                if label and LIAB_HDR.search(label):
+                    in_liab = True
                 if not vals:
                     if label and not re.search(r"(?i)^\(?(unaudited|reviewed|audited|ยังไม่ได้ตรวจสอบ|สอบทาน|\(?in (thousand )?baht|หน่วย)", label):
                         pending.append(label)
                         ctx = " ".join(pending[-3:])
+                        last_head = label
                     continue
                 if not label:
                     pending = []
@@ -416,10 +459,14 @@ def extract(path: Path, ticker: str):
                 # ป้ายขึ้นต้นตัวเล็ก (อังกฤษ) = บรรทัดต่อจากข้างบน ใช้แบบต่อกันเท่านั้น
                 cont = bool(re.match(r"[a-z]", label)) and bool(joins)
                 cands = joins if cont else [label] + joins
+                if SUBROW.match(label) and ctx:
+                    cands = [c for c in (last_head, ctx) if c]   # ใช้หัวข้อด้านบนเป็นชื่อรายการ (หัวข้อใกล้สุดก่อน)
                 hit = None
                 for cand in cands:
                     for key, th, st, rx, cx, ex in COMPILED:
-                        if st != stmt or (key, ) in seen:
+                        if st != stmt or ((key, ) in seen and key not in SUM_KEYS):
+                            continue
+                        if key in LIAB_ONLY and stmt == "BS" and not in_liab:
                             continue
                         if not rx.search(cand) or (ex and ex.search(cand)):
                             continue
@@ -435,6 +482,7 @@ def extract(path: Path, ticker: str):
                 if not hit:
                     continue
                 key, th, label = hit
+                again = (key, ) in seen
                 seen.add((key, ))
                 for col in blk["cols"]:
                     if col["col"] not in vals:
@@ -442,6 +490,18 @@ def extract(path: Path, ticker: str):
                     raw = vals[col["col"]]
                     v = abs(raw) if key in EXPENSE else raw
                     is_eps = key == "eps_basic"
+                    if again:
+                        # บรรทัดที่ต้องรวม (ยอดสินเชื่อ/ดอกเบี้ยรับหลายประเภท) → บวกเข้าตัวเดิมของช่วงนี้
+                        f0 = acc.get((key, col["col"]))
+                        if f0 is not None:
+                            f0["value"] += raw
+                            if f0["value_mb"] != "" and mult is not None:
+                                f0["value_mb"] = round(f0["value"] * mult / 1e6, 3)
+                            f0["cell"] += f"+{col_letter(col['col'])}{rn}"
+                            if label not in f0["label_raw"]:
+                                f0["label_raw"] += f" + {label}"
+                        continue
+                    acc[(key, col["col"])] = None  # ตั้งไว้ก่อน แล้วชี้ไปที่ fact ด้านล่าง
                     facts.append({
                         "ticker": ticker, "key": key, "name_th": th, "stmt": stmt,
                         "period_type": ptype, "period_end": col["period_end"], "basis": col["basis"],
@@ -452,6 +512,7 @@ def extract(path: Path, ticker: str):
                         "file": path.name, "sheet": sheet, "cell": f"{col_letter(col['col'])}{rn}",
                         "label_raw": label, "layer": "1",
                     })
+                    acc[(key, col["col"])] = facts[-1]
             if mult is None:
                 notes.append(f"{path.name} · {sheet}: หาหน่วยไม่เจอ — ต้องเปิดดูเอง")
     # ตัดตัวซ้ำ (บรรทัดเดียวกันโผล่ทั้งงบกำไรขาดทุนและงบกำไรขาดทุนเบ็ดเสร็จ) เก็บตัวแรก

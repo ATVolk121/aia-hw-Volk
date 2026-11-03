@@ -36,18 +36,21 @@ def load(path) -> list:
 
 
 class Facts:
-    def __init__(self, rows: list, main_file: str = None, prev_q_file: str = None):
-        """main_file = ไฟล์งบงวดที่วิเคราะห์ (เช่น งบ Q2) · prev_q_file = งบไตรมาสก่อน (ใช้เทียบ QoQ)"""
+    def __init__(self, rows: list, main_file: str = None, prev_q_file: str = None, yago_file: str = None):
+        """main_file = ไฟล์งบงวดที่วิเคราะห์ (เช่น งบ Q2) · prev_q_file = งบไตรมาสก่อน (ใช้เทียบ QoQ)
+        · yago_file = งบไตรมาสเดียวกันของปีก่อน (ใช้เทียบยอดงบดุลแบบ YoY เช่น พอร์ตสินเชื่อ)"""
         self.rows = rows
         files = sorted({r["file"] for r in rows})
         self.main = main_file or (files[-1] if files else None)
         self.prev_q = prev_q_file
+        self.yago = yago_file
 
     # ── ดึงค่าดิบ ─────────────────────────────────────────────
     def row(self, key, ptype, which="cur", basis=None, file=None):
         file = file or self.main
+        # แถวที่ AI เติมจากหมายเหตุ/MD&A เก็บไฟล์ต้นทางจริงไว้ใน file และบอกงวดที่ใช้ด้วย for_file
         cand = [r for r in self.rows if r["key"] == key and r["period_type"] == ptype
-                and r["which"] == which and r["file"] == file]
+                and r["which"] == which and (r["file"] == file or r.get("for_file") == file)]
         if basis:
             cand = [r for r in cand if r["basis"] == basis]
         for b in BASIS_ORDER:
@@ -138,6 +141,9 @@ class Facts:
             return base[name](ptype, which, basis, file)
         if name == "profit_total":   # กำไรสุทธิทั้งก้อน (รวมส่วนของผู้ถือหุ้นส่วนน้อย)
             return self.simple("net_profit", ptype, which, basis, file)
+        nb = self._nonbank(name, ptype, which, basis, file)
+        if nb is not False:
+            return nb
         if name == "gross_margin":
             gp, rv = self.gross_profit(ptype, which, basis, file), self.revenue(ptype, which, basis, file)
             return _ratio(gp, rv, "กำไรขั้นต้น ÷ รายได้ขาย/บริการ")
@@ -203,6 +209,122 @@ class Facts:
             return self.simple(name, "BS", which, basis, file)
         return self.simple(name, ptype, which, basis, file)
 
+    # ── ธุรกิจสินเชื่อ (Non-bank) ─────────────────────────────────
+    DEBT_KEYS = ["st_debt", "st_debt_related", "lt_debt_current", "lt_debt", "debentures_current", "debentures"]
+
+    def _bs_avg(self, calc_fn, which, basis, file):
+        """ยอดเฉลี่ยต้น-ปลายไตรมาส: สิ้นงวดนี้ กับ สิ้นไตรมาสก่อน (จากงบไตรมาสก่อน) · ไม่มีงบไตรมาสก่อนใช้สิ้นปีก่อน"""
+        cur = calc_fn("cur", file)
+        if cur is None:
+            return None, ""
+        prev, lbl = None, ""
+        if which == "cur" and self.prev_q and file in (None, self.main):
+            prev, lbl = calc_fn("cur", self.prev_q), "เฉลี่ยสิ้นไตรมาสนี้กับไตรมาสก่อน"
+        if prev is None and which == "cur":
+            prev, lbl = calc_fn("prior", file), "เฉลี่ยสิ้นงวดนี้กับสิ้นปีก่อน"
+        if prev is None:
+            return cur, "ยอดสิ้นงวด"
+        return Calc((cur.value + prev.value) / 2, cur.unit, lbl, cur.refs + prev.refs), lbl
+
+    def _nonbank(self, name, ptype, which, basis, file):
+        """คืน Calc · None (คำนวณไม่ได้) · False (ไม่ใช่ตัวชี้วัด Non-bank)"""
+        mult = {"3M": 4, "6M": 2, "9M": 4 / 3, "12M": 1}.get(ptype, 4)
+
+        def loans(w, f):
+            return self._sum(["loans_current", "loans_noncurrent"], "BS", w, basis, f, "ลูกหนี้สินเชื่อ/เช่าซื้อสุทธิ")
+
+        def debt(w, f):
+            return self._sum(self.DEBT_KEYS, "BS", w, basis, f, "หนี้ที่มีภาระดอกเบี้ย (เงินกู้+หุ้นกู้)")
+
+        if name == "net_loans":
+            return loans(which, file)
+        if name == "ib_debt":
+            return debt(which, file)
+        if name in ("loan_growth_ytd", "loan_growth_qoq", "loan_growth_yoy"):
+            cur = loans("cur", file)
+            if name == "loan_growth_ytd":
+                prev, lbl = loans("prior", file), "สิ้นปีก่อน"
+            elif name == "loan_growth_qoq":
+                prev, lbl = (loans("cur", self.prev_q) if self.prev_q else None), "สิ้นไตรมาสก่อน"
+            else:
+                prev, lbl = (loans("cur", self.yago) if self.yago else None), "สิ้นไตรมาสเดียวกันปีก่อน"
+            if not cur or not prev or not prev.value:
+                return None
+            return Calc((cur.value / prev.value - 1) * 100, "%", f"สินเชื่อสุทธิ สิ้นงวดนี้ ÷ {lbl} − 1", cur.refs + prev.refs)
+        if name in ("yield", "cof", "spread", "nim", "credit_cost", "credit_cost_all"):
+            ii = self.simple("interest_income", ptype, which, basis, file)
+            fc = self.simple("finance_cost", ptype, which, basis, file)
+            avg_l, lbl = self._bs_avg(loans, which, basis, file)
+            avg_d, lbl_d = self._bs_avg(debt, which, basis, file)
+            if name == "yield":
+                return Calc(ii.value * mult / avg_l.value * 100, "%", f"ดอกเบี้ยรับ ×{mult:g} ÷ สินเชื่อสุทธิ ({lbl})",
+                            ii.refs + avg_l.refs) if ii and avg_l and avg_l.value else None
+            if name == "cof":
+                return Calc(fc.value * mult / avg_d.value * 100, "%", f"ต้นทุนทางการเงิน ×{mult:g} ÷ หนี้มีดอกเบี้ย ({lbl_d})",
+                            fc.refs + avg_d.refs) if fc and avg_d and avg_d.value else None
+            if name == "spread":
+                y, c = self.metric("yield", ptype, which, basis, file), self.metric("cof", ptype, which, basis, file)
+                return Calc(y.value - c.value, "%", "Yield − ต้นทุนเงิน", y.refs + c.refs) if y and c else None
+            if name == "nim":
+                return Calc((ii.value - fc.value) * mult / avg_l.value * 100, "%",
+                            f"(ดอกเบี้ยรับ − ต้นทุนทางการเงิน) ×{mult:g} ÷ สินเชื่อสุทธิ ({lbl})",
+                            ii.refs + fc.refs + avg_l.refs) if ii and fc and avg_l and avg_l.value else None
+            keys = ["ecl"] if name == "credit_cost" else ["ecl", "derecog_loss"]
+            e = self._sum(keys, ptype, which, basis, file, "ผลขาดทุนด้านเครดิต" + (" + ขาดทุนจากตัดรายการ" if len(keys) > 1 else ""))
+            return Calc(e.value * mult / avg_l.value * 100, "%", f"{e.formula} ×{mult:g} ÷ สินเชื่อสุทธิ ({lbl})",
+                        e.refs + avg_l.refs) if e and avg_l and avg_l.value else None
+        if name in ("ppop", "ci_ratio"):
+            inc = self._sum(["interest_income", "fee_income", "other_income"], ptype, which, basis, file, "ดอกเบี้ยรับ+ค่าธรรมเนียม+รายได้อื่น")
+            fc = self.simple("finance_cost", ptype, which, basis, file)
+            opex = self._sum(["admin_exp", "selling_exp"], ptype, which, basis, file, "ค่าใช้จ่ายดำเนินงาน")
+            if not inc or not fc or not opex:
+                return None
+            if name == "ppop":
+                return Calc(inc.value - fc.value - opex.value, "ล้านบาท",
+                            "ดอกเบี้ยรับ+ค่าธรรมเนียม+รายได้อื่น − ต้นทุนทางการเงิน − ค่าใช้จ่ายดำเนินงาน", inc.refs + fc.refs + opex.refs)
+            denom = inc.value - fc.value
+            return Calc(opex.value / denom * 100, "%", "ค่าใช้จ่ายดำเนินงาน ÷ (รายได้รวม − ต้นทุนทางการเงิน)",
+                        inc.refs + fc.refs + opex.refs) if denom else None
+        if name == "ibd_to_equity":
+            d, e = debt(which, file), self.simple("total_equity", "BS", which, basis, file)
+            c = _ratio(d, e, "หนี้ที่มีภาระดอกเบี้ย ÷ ส่วนของผู้ถือหุ้น", pct=False)
+            if c:
+                c.unit = "เท่า"
+            return c
+        if name == "st_debt_share":
+            st = self._sum(["st_debt", "st_debt_related", "lt_debt_current", "debentures_current"], "BS", which, basis, file,
+                           "หนี้ครบกำหนดใน 1 ปี")
+            d = debt(which, file)
+            return _ratio(st, d, "หนี้ครบกำหนดใน 1 ปี ÷ หนี้มีดอกเบี้ยรวม")
+        if name == "gross_loan_growth_ytd":
+            # ยอดก่อนหักค่าเผื่อ (Stage รวม) มีในหมายเหตุเฉพาะ สิ้นงวดนี้ กับ สิ้นปีก่อน → คิดได้แค่เทียบสิ้นปี
+            cur = self.metric("gross_loans", "BS", "cur", basis, file)
+            prev = self.metric("gross_loans", "BS", "prior", basis, file)
+            if not cur or not prev or not prev.value:
+                return None
+            return Calc((cur.value / prev.value - 1) * 100, "%", "ลูกหนี้ก่อนหักค่าเผื่อ สิ้นงวดนี้ ÷ สิ้นปีก่อน − 1",
+                        cur.refs + prev.refs)
+        if name in ("npl_ratio", "stage2_ratio", "coverage", "npl_incl_poci", "coverage_incl_poci", "gross_loans"):
+            s3 = self.simple("stage3", "BS", which, basis, file)
+            s2 = self.simple("stage2", "BS", which, basis, file)
+            # POCI = ลูกหนี้ที่ด้อยค่าตั้งแต่ซื้อ/ให้สินเชื่อ (เช่น SAWAD) แยกจาก Stage 3 ตามที่บริษัทรายงาน แต่นับในยอดรวม
+            gross = self._sum(["stage1", "stage2", "stage3", "poci"], "BS", which, basis, file,
+                              "ลูกหนี้ก่อนหักค่าเผื่อ (Stage 1+2+3+POCI)")
+            allow = self.simple("allowance", "BS", which, basis, file)
+            impaired = self._sum(["stage3", "poci"], "BS", which, basis, file, "Stage 3 + POCI")
+            if name == "gross_loans":
+                return gross
+            if name == "npl_ratio":
+                return _ratio(s3, gross, "ลูกหนี้ Stage 3 ÷ ลูกหนี้ก่อนหักค่าเผื่อ")
+            if name == "npl_incl_poci":
+                return _ratio(impaired, gross, "ลูกหนี้ Stage 3 + POCI ÷ ลูกหนี้ก่อนหักค่าเผื่อ")
+            if name == "stage2_ratio":
+                return _ratio(s2, gross, "ลูกหนี้ Stage 2 ÷ ลูกหนี้ก่อนหักค่าเผื่อ")
+            if name == "coverage_incl_poci":
+                return _ratio(allow, impaired, "ค่าเผื่อผลขาดทุนด้านเครดิต ÷ (Stage 3 + POCI)")
+            return _ratio(allow, s3, "ค่าเผื่อผลขาดทุนด้านเครดิต ÷ ลูกหนี้ Stage 3")
+        return False
+
     def growth(self, name, ptype="3M", basis=None, mode="yoy"):
         """yoy = งวดนี้เทียบปีก่อน (คอลัมน์เปรียบเทียบในงบเดียวกัน) · qoq = เทียบไตรมาสก่อน (ต้องมี prev_q_file)
         ตัวเลขที่เป็น % (อัตรากำไร) คืนผลต่างเป็น "จุด" · ตัวเลขอื่นคืน % การเปลี่ยนแปลง"""
@@ -223,8 +345,8 @@ class Facts:
         if cur.unit in ("%", "วัน", "เท่า"):
             return Calc(cur.value - prev.value, "จุด" if cur.unit == "%" else cur.unit,
                         f"({cur.formula}) งวดนี้ − {lbl}", cur.refs + prev.refs)
-        if not prev.value:
-            return None
+        if not prev.value or prev.value < 0:
+            return None   # ฐานติดลบ (ขาดทุน) คิดเป็น % การเติบโตไม่ได้ — ให้ดูตัวเลขจริงแทน
         return Calc((cur.value / prev.value - 1) * 100, "%", f"{cur.formula}: งวดนี้ ÷ {lbl} − 1",
                     cur.refs + prev.refs)
 
@@ -244,3 +366,10 @@ def find_files(folder: Path, period: str):
     pk = {"Q2": "Q1", "Q3": "Q2"}.get(kind)
     prev = sorted(folder.glob(f"*_FS_{pk}-{year}*.xlsx")) if pk else []
     return main, (prev[-1] if prev else None)
+
+
+def find_yago(folder: Path, period: str):
+    """งบงวดเดียวกันของปีก่อน (เช่น Q2-2568 สำหรับ Q2-2569) — ไม่มีคืน None"""
+    kind, year = period.split("-")
+    files = sorted(folder.glob(f"*_FS_{kind}-{int(year) - 1}*.xlsx"))
+    return files[-1] if files else None

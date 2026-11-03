@@ -38,7 +38,7 @@ TH = {"มีนาคม": 3, "มิถุนายน": 6, "กันยา�
 
 def filing_date(folder_name: str):
     """FS_202608_0776FIN0708202613570 → 2026-08-07 (ตัวเลข 8 หลักหลัง FIN/E1N = ววดดปปปป)"""
-    m = re.search(r"(?:FIN|E1N|NWS)(\d{2})(\d{2})(\d{4})", folder_name)
+    m = re.search(r"(?:FIN|E1N|NWS|ONE)(\d{2})(\d{2})(\d{4})", folder_name)   # ONE = แบบ 56-1 One Report
     return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else None
 
 
@@ -134,8 +134,10 @@ def plan_moves(src: Path, ticker: str, dest: Path):
             continue
         per = f"FY-{int(d[:4]) - 1 + 543}"
         for p in pdfs:
-            en = p.name.upper().startswith("E_")
-            moves.append((p, dest / f"{d}_56-1_{per}{'_EN' if en else ''}.pdf"))
+            # ฉบับภาษาอังกฤษ: ชื่อไฟล์ขึ้นต้น E_ หรือชื่อโฟลเดอร์ลงท้าย E_zip (เช่น R561_1184ONE...E_zip)
+            en = p.name.upper().startswith("E_") or r.name.upper().endswith("E_ZIP")
+            extra = "_Structure" if p.name.upper().startswith("STRUCTURE") else ""   # แผนภาพโครงสร้างกลุ่ม/ผู้ถือหุ้น
+            moves.append((p, dest / f"{d}_56-1_{per}{extra}{'_EN' if en else ''}.pdf"))
         notes.append(f"{r.name} → 56-1 {per} · ยื่น {d}")
     return moves, notes
 

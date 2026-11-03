@@ -15,7 +15,7 @@ id,source,loc,quote,metric,period,kind,compare,claimed,unit,approx,comparator,di
 | `metric` | ชื่อตัวเลขจากรายการด้านล่าง · ไม่มีในรายการใช้ `other` | `total_revenue` |
 | `period` | งวดที่พูดถึง: `3M` (ไตรมาส) · `6M` · `9M` · `12M` · `BS` (ยอด ณ สิ้นงวด) · `FY` (ทั้งปี ใช้กับเป้า) | `3M` |
 | `kind` | ชนิดคำกล่าว (ดูตารางถัดไป) | `level` |
-| `compare` | ฐานเทียบของ growth/margin_chg/direction: `yoy` (เทียบปีก่อน) · `qoq` (เทียบไตรมาสก่อน) · ว่าง | `yoy` |
+| `compare` | ฐานเทียบของ growth/margin_chg/direction: `yoy` (เทียบปีก่อน) · `qoq` (เทียบไตรมาสก่อน) · `ytd` (เทียบสิ้นปีก่อน ใช้กับยอดงบดุล เช่น พอร์ตสินเชื่อ) · ว่าง | `yoy` |
 | `claimed` | ตัวเลขที่พูด (ตัวเลขล้วน ไม่มีลูกน้ำ) · หน่วยเงินแปลงเป็น **ล้านบาท** เสมอ · bps แปลงเป็นจุด (60 bps = 0.6) | `265700` |
 | `unit` | `ล้านบาท` · `%` · `จุด` · `บาท` · `วัน` · `เท่า` · `สาขา` · `อื่น` | `ล้านบาท` |
 | `approx` | `y` ถ้ามีคำว่า ประมาณ / เกือบ / ราว / กว่า / around / about · ไม่มี = `n` | `y` |
@@ -55,6 +55,13 @@ id,source,loc,quote,metric,period,kind,compare,claimed,unit,approx,comparator,di
 | `inventory_days` · `receivable_days` · `payable_days` · `ccc` | วันสินค้าคงเหลือ · วันลูกหนี้ · วันเจ้าหนี้ · วงจรเงินสด | วัน |
 | `ocf` · `ocf_to_np` · `capex` · `dividends_paid` | เงินสดจากการดำเนินงาน · เทียบกำไร · ลงทุน · ปันผลจ่าย | ล้านบาท · เท่า |
 | `net_debt` · `de_ratio` · `st_debt` | หนี้สุทธิ · หนี้สินต่อทุน · เงินกู้ระยะสั้น | ล้านบาท · เท่า |
+| **ธุรกิจสินเชื่อ (Non-bank)** | | |
+| `net_loans` · `loan_growth_qoq` · `loan_growth_ytd` | พอร์ตสินเชื่อสุทธิ · โตจากไตรมาสก่อน · โตจากสิ้นปีก่อน (พูดว่า "พอร์ตโตกี่ %" ให้ใช้ `net_loans` + kind=growth + compare = yoy / qoq / ytd ตามที่พูด) | ล้านบาท · % |
+| `interest_income` · `fee_income` · `ppop` | ดอกเบี้ยรับ · ค่าธรรมเนียม/นายหน้าประกัน · กำไรก่อนสำรอง | ล้านบาท |
+| `yield` · `cof` · `spread` · `nim` | ผลตอบแทนสินเชื่อ · ต้นทุนเงิน · ส่วนต่าง · NIM | % |
+| `ci_ratio` · `credit_cost` · `ecl` | ค่าใช้จ่ายต่อรายได้ · ค่าใช้จ่ายสำรองต่อพอร์ต · ค่าใช้จ่ายสำรอง (ล้านบาท) | % · ล้านบาท |
+| `npl_ratio` · `stage2_ratio` · `coverage` | NPL (Stage 3) · Stage 2 · ค่าเผื่อ ÷ NPL | % |
+| `ib_debt` · `ibd_to_equity` · `st_debt_share` | หนี้มีดอกเบี้ย · ต่อทุน · สัดส่วนหนี้ครบกำหนดใน 1 ปี | ล้านบาท · เท่า · % |
 | `other` | อื่น ๆ ที่งบไม่มี (จำนวนสาขา ส่วนแบ่งตลาด ยอดขายต่อสาขา ฯลฯ) → ระบบให้ ⬜ ตรวจไม่ได้ | — |
 
 ## check_by — นิพจน์สำหรับคำกล่าวเชิงคุณภาพ

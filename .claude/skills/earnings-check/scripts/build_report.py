@@ -25,7 +25,7 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from facts_lib import Facts, find_files, load  # noqa: E402
+from facts_lib import Facts, find_files, find_yago, load  # noqa: E402
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -117,21 +117,44 @@ def period_th(p: str) -> str:
     return {"Q1": "ไตรมาส 1", "Q2": "ไตรมาส 2", "Q3": "ไตรมาส 3", "FY": "ทั้งปี"}.get(k, k) + f"/{y}"
 
 
+def _md_inline(text: str) -> str:
+    t = E(text.strip())
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
+    t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', t)
+    t = t.replace("[คำนวณ]", '<span class="calc">[คำนวณ]</span>')
+    return t.replace("[คำพูด]", '<span class="calc">[คำพูดผู้บริหาร]</span>')
+
+
+def _md_table(rows: list) -> str:
+    """ตาราง markdown แบบ | a | b | (แถวแรก = หัวตาราง · ข้ามแถว |---|)"""
+    cells = [r.strip().strip("|").split("|") for r in rows if not re.fullmatch(r"[\s:|-]+", r.strip())]
+    if not cells:
+        return ""
+    head = "".join(f"<th>{_md_inline(c)}</th>" for c in cells[0])
+    body = "".join("<tr>" + "".join(f"<td>{_md_inline(c)}</td>" for c in r) + "</tr>" for r in cells[1:])
+    return f"<table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>"
+
+
 def md_to_html(md: str) -> str:
-    """markdown อย่างง่าย: ย่อหน้า · รายการ - · **ตัวหนา** · [ข้อความ](ลิงก์)"""
-    out, in_list = [], False
-    for line in md.splitlines():
+    """markdown อย่างง่าย: ย่อหน้า · รายการ - · ตาราง | | · **ตัวหนา** · [ข้อความ](ลิงก์)"""
+    out, in_list, table = [], False, []
+    for line in md.splitlines() + [""]:
         s = line.rstrip()
+        if s.strip().startswith("|"):
+            if in_list:
+                out.append("</ul>")
+                in_list = False
+            table.append(s)
+            continue
+        if table:
+            out.append(_md_table(table))
+            table = []
         if not s.strip():
             if in_list:
                 out.append("</ul>")
                 in_list = False
             continue
-        t = E(s.strip())
-        t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
-        t = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', t)
-        t = t.replace("[คำนวณ]", '<span class="calc">[คำนวณ]</span>')
-        t = t.replace("[คำพูด]", '<span class="calc">[คำพูดผู้บริหาร]</span>')
+        t = _md_inline(s)
         if s.lstrip().startswith(("- ", "* ")):
             if not in_list:
                 out.append("<ul>")
@@ -198,6 +221,46 @@ def plain(c, sign=False):
     return nfmt(c.value, c.unit, sign) + (" [คำนวณ]" if c.calc else "")
 
 
+# ── ตัวชี้วัดเฉพาะกลุ่ม ──────────────────────────────────────────────
+# (ชื่อ, metric, งวด, เทียบกับอะไร: prior = คอลัมน์ปีก่อนในงบเดียวกัน · yago = งบไตรมาสเดียวกันปีก่อน · qoq = ไตรมาสก่อน)
+SECTOR_KPIS = {
+    "nonbank": [
+        ("พอร์ตสินเชื่อสุทธิ (ล้านบาท)", "net_loans", "BS", ("yago", "qoq")),
+        ("พอร์ตโต เทียบไตรมาสเดียวกันปีก่อน (%)", "loan_growth_yoy", "BS", ()),
+        ("พอร์ตโต เทียบไตรมาสก่อน (%)", "loan_growth_qoq", "BS", ()),
+        ("Yield ผลตอบแทนสินเชื่อ (%)", "yield", "3M", ("yago", "qoq")),
+        ("ต้นทุนเงิน (%)", "cof", "3M", ("yago", "qoq")),
+        ("ส่วนต่าง Spread (%)", "spread", "3M", ("yago", "qoq")),
+        ("NIM (%)", "nim", "3M", ("yago", "qoq")),
+        ("ค่าใช้จ่ายต่อรายได้ Cost-to-income (%)", "ci_ratio", "3M", ("prior", "qoq")),
+        ("กำไรก่อนสำรอง PPOP (ล้านบาท)", "ppop", "3M", ("prior", "qoq")),
+        ("Credit cost (%)", "credit_cost", "3M", ("yago", "qoq")),
+        ("Credit cost รวมขาดทุนจากตัดรายการ (%)", "credit_cost_all", "3M", ("yago", "qoq")),
+        ("NPL / Stage 3 (%)", "npl_ratio", "BS", ("prior", "qoq")),
+        ("Stage 2 (%)", "stage2_ratio", "BS", ("prior", "qoq")),
+        ("Coverage ค่าเผื่อ ÷ NPL (%)", "coverage", "BS", ("prior", "qoq")),
+    ],
+    "it": [
+        ("อัตรากำไรขั้นต้น (%)", "gross_margin", "3M", ("prior", "qoq")),
+        ("ค่าใช้จ่ายขาย+บริหาร ต่อรายได้ (%)", "sga_to_rev", "3M", ("prior", "qoq")),
+        ("วันสินค้าคงเหลือ", "inventory_days", "3M", ("qoq",)),
+        ("วันลูกหนี้", "receivable_days", "3M", ("qoq",)),
+        ("วันเจ้าหนี้", "payable_days", "3M", ("qoq",)),
+        ("วงจรเงินสด (วัน)", "ccc", "3M", ("qoq",)),
+        ("กำไรค่าเงิน ÷ กำไรก่อนภาษี (%)", "fx_share_pbt", "3M", ("prior", "qoq")),
+        ("เงินสดจากการดำเนินงาน ÷ กำไร (เท่า)", "ocf_to_np", "3M", ("prior",)),
+    ],
+}
+SECTOR_TH = {"nonbank": "ธุรกิจสินเชื่อ (Non-bank)", "it": "จัดจำหน่าย/ค้าปลีกไอที", "general": "ทั่วไป"}
+
+
+def detect_sector(F) -> str:
+    keys = {r["key"] for r in F.rows if r["file"] == F.main}
+    if "interest_income" in keys and ({"loans_current", "loans_noncurrent"} & keys) and "cogs" not in keys:
+        return "nonbank"
+    return "general"
+
+
 # ── รายงานรายตัว ─────────────────────────────────────────────────────
 
 def stock_report(a) -> int:
@@ -206,7 +269,8 @@ def stock_report(a) -> int:
     if not main_f:
         print(f"ไม่พบงบ {a.period} ใน {vault}")
         return 1
-    F = Facts(load(work / "FACTS.csv"), main_f.name, prev_f.name if prev_f else None)
+    yago = find_yago(vault, a.period)
+    F = Facts(load(work / "FACTS.csv"), main_f.name, prev_f.name if prev_f else None, yago.name if yago else None)
     summ = read_summary(work / "summary.md")
     claims = read_csv(work / "claims_checked.csv")
     verify = {v["id"]: v for v in read_csv(work / "verify.csv")}
@@ -246,6 +310,26 @@ def stock_report(a) -> int:
                      and r["period_type"] == "BS"), "")
     basis = {"consolidated": "งบการเงินรวม", "single": "งบการเงิน", "separate": "งบเฉพาะกิจการ"}.get(F.basis_used(), "")
 
+    check_lines = [f"# {a.ticker} {a.period} — ตัวเลขในรายงาน (ใช้กับ check_numbers.py)", ""]
+    sector = a.sector if a.sector != "auto" else detect_sector(F)
+
+    # ① ตัวชี้วัดเฉพาะกลุ่ม (อยู่บนสุด: อ่านธุรกิจผ่านตัวขับ P×Q ก่อนตัวเลขงบ)
+    kpi_html = []
+    for label, m, pt, cmp_kinds in SECTOR_KPIS.get(sector, []):
+        cur = F.metric(m, pt, "cur")
+        if cur is None:
+            continue
+        pri = F.metric(m, pt, "prior") if "prior" in cmp_kinds else None
+        yago = None
+        if "yago" in cmp_kinds and F.yago:
+            yago = F.metric(m, pt, "cur", None, F.yago)
+        qprev = F.metric(m, pt, "cur", None, F.prev_q) if ("qoq" in cmp_kinds and F.prev_q) else None
+        ref = pri or yago
+        kpi_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}{cell(ref)}{cell(qprev)}</tr>")
+        for tag, c in (("งวดนี้", cur), ("ปีก่อน", ref), ("ไตรมาสก่อน", qprev)):
+            if c is not None:
+                check_lines.append(f"- {label} · {tag}: {plain(c)}")
+
     # ① ตารางสรุปงบ
     pl_rows = [("รายได้จากการขายและบริการ", "revenue"), ("รายได้รวม", "total_revenue"),
                ("กำไรขั้นต้น", "gross_profit"), ("อัตรากำไรขั้นต้น (%)", "gross_margin"),
@@ -253,7 +337,13 @@ def stock_report(a) -> int:
                ("กำไร(ขาดทุน)จากอัตราแลกเปลี่ยน", "fx_gain"), ("ต้นทุนทางการเงิน", "finance_cost"),
                ("กำไรสุทธิ (ส่วนของบริษัทใหญ่)", "net_profit"), ("อัตรากำไรสุทธิ (%)", "net_margin"),
                ("กำไรต่อหุ้น (บาท)", "eps_basic")]
-    check_lines = [f"# {a.ticker} {a.period} — ตัวเลขในรายงาน (ใช้กับ check_numbers.py)", ""]
+    if sector == "nonbank":   # ธุรกิจสินเชื่อไม่มีต้นทุนขาย ใช้รายได้ดอกเบี้ยแทน
+        pl_rows = [("รายได้ดอกเบี้ย", "interest_income"), ("รายได้ค่าธรรมเนียม/บริการ", "fee_income"),
+                   ("รายได้อื่น", "other_income"), ("รายได้รวม", "total_revenue"),
+                   ("ค่าใช้จ่ายดำเนินงาน", "sga"), ("ต้นทุนทางการเงิน", "finance_cost"),
+                   ("ผลขาดทุนด้านเครดิต (ECL)", "ecl"), ("ขาดทุนจากการตัดรายการ/ขายหนี้", "derecog_loss"),
+                   ("กำไรก่อนสำรอง (PPOP)", "ppop"), ("กำไรสุทธิ (ส่วนของบริษัทใหญ่)", "net_profit"),
+                   ("กำไรต่อหุ้น (บาท)", "eps_basic")]
     rows_html = []
     for label, m in pl_rows:
         cur, pri = F.metric(m, "3M", "cur"), F.metric(m, "3M", "prior")
@@ -270,6 +360,10 @@ def stock_report(a) -> int:
                ("สินค้าคงเหลือ", "inventories"), ("เจ้าหนี้การค้า", "trade_payables"),
                ("เงินกู้ระยะสั้น", "st_debt"), ("หนี้สุทธิ (ไม่รวมสัญญาเช่า)", "net_debt"),
                ("หนี้สินต่อทุน (เท่า)", "de_ratio")]
+    if sector == "nonbank":
+        bs_rows = [("ลูกหนี้สินเชื่อ/เช่าซื้อสุทธิ", "net_loans"), ("เงินสด", "cash"),
+                   ("หนี้ที่มีภาระดอกเบี้ย", "ib_debt"), ("ส่วนของผู้ถือหุ้นรวม", "total_equity"),
+                   ("หนี้มีดอกเบี้ยต่อทุน (เท่า)", "ibd_to_equity"), ("หนี้ครบกำหนดใน 1 ปี (% ของหนี้มีดอกเบี้ย)", "st_debt_share")]
     bs_html = []
     for label, m in bs_rows:
         cur, pri = F.metric(m, "BS", "cur"), F.metric(m, "BS", "prior")
@@ -283,6 +377,8 @@ def stock_report(a) -> int:
     wc_rows = [("วันสินค้าคงเหลือ", "inventory_days"), ("วันลูกหนี้", "receivable_days"),
                ("วันเจ้าหนี้", "payable_days"), ("วงจรเงินสด (วัน)", "ccc")]
     wc_html = []
+    if sector == "nonbank":
+        wc_rows = []
     for label, m in wc_rows:
         cur, pri = F.metric(m, "3M", "cur"), F.metric(m, "3M", "prior")
         wc_html.append(f"<tr><td>{E(label)}</td>{cell(cur)}</tr>" if cur else "")
@@ -359,6 +455,19 @@ def stock_report(a) -> int:
         return md_to_html(summ.get(title, "")) if summ.get(title) else \
             '<p class="note">— ยังไม่มีบทสรุปส่วนนี้ (summary.md) —</p>'
 
+    wc_block = ""
+    if wc_html:
+        wc_block = ('<h3>วันหมุนเวียน (คิดจากไตรมาสนี้ × 91 วัน)</h3>'
+                    '<table><thead><tr><th>รายการ</th><th class="n">ไตรมาสนี้</th></tr></thead><tbody>'
+                    + "".join(wc_html) + '</tbody></table><p class="note">ยอดสิ้นงวด ÷ ยอดขายหรือต้นทุนของไตรมาส × 91 วัน — '
+                    'บริษัทอาจคิดด้วยยอดเฉลี่ย ตัวเลขจึงต่างจากที่บริษัทรายงานได้</p>')
+    kpi_block = ""
+    if kpi_html:
+        kpi_block = (f'<h3>ตัวชี้วัดหลักของกลุ่ม{E(SECTOR_TH.get(sector, ""))}</h3>'
+                     '<table><thead><tr><th>ตัวชี้วัด</th><th class="n">งวดนี้</th><th class="n">งวดเปรียบเทียบ (ปีก่อน)</th>'
+                     '<th class="n">ไตรมาสก่อน</th></tr></thead><tbody>' + "".join(kpi_html) + "</tbody></table>"
+                     '<p class="note">อัตราส่วนคิดเป็นรายปี (×4) หารด้วยยอดเฉลี่ยต้น-ปลายไตรมาส · ตัวเลขที่บริษัทรายงานเองอาจต่างเพราะใช้ยอดเฉลี่ยรายเดือนหรือยอดก่อนหักค่าเผื่อ (gross) · NPL · Stage 2 · Coverage เทียบ ณ สิ้นปีก่อน ส่วนตัวอื่นเทียบไตรมาสเดียวกันปีก่อน</p>'
+                     '<h3>งบกำไรขาดทุน</h3>')
     tiles = "".join(f'<div class="tile"><div class="lbl">{k} {VERDICT_TH[k]}</div><div class="val">{cnt[k]}</div></div>'
                     for k in ("✅", "🟡", "❌", "⬜", "🔭"))
     score_tile = (f'<div class="tile"><div class="lbl">พูดตรง (✅ ÷ ข้อที่ตัดสินได้)</div>'
@@ -378,7 +487,8 @@ def stock_report(a) -> int:
 <div class="tiles">{score_tile}{tiles}</div>
 <p class="note">ตรวจ {len(final)} คำกล่าว จากเทป Oppday และ MD&amp;A · ชี้ที่ตัวเลขเพื่อดูไฟล์ ชีต และเซลล์ต้นทาง</p></section>
 
-<section><h2>① สรุปงบ (อ่านเอง)</h2>
+<section><h2>① สรุปผลประกอบการ (อ่านเอง)</h2>
+{kpi_block}
 <p class="note">หน่วย ล้านบาท เว้นแต่ระบุ · ไตรมาสนี้ = 3 เดือนสิ้นสุด {E(th_date(end))} · ปีก่อน = {E(th_date(prior_end))}
 · QoQ = เทียบไตรมาสก่อน · <span class="calc">[คำนวณ]</span> = คิดจากตัวเลขในงบ</p>
 <table><thead><tr><th>รายการ</th><th class="n">ไตรมาสนี้</th><th class="n">ไตรมาสเดียวกันปีก่อน</th>
@@ -388,20 +498,20 @@ def stock_report(a) -> int:
 <h3>ฐานะการเงินและเงินทุนหมุนเวียน</h3>
 <table><thead><tr><th>รายการ</th><th class="n">สิ้นงวดนี้</th><th class="n">สิ้นปีก่อน ({E(th_date(bs_prior))})</th>
 <th class="n">เปลี่ยน %</th></tr></thead><tbody>{"".join(bs_html)}</tbody></table>
-<h3>วันหมุนเวียน (คิดจากไตรมาสนี้ × 91 วัน)</h3>
-<table><thead><tr><th>รายการ</th><th class="n">ไตรมาสนี้</th></tr></thead><tbody>{"".join(wc_html)}</tbody></table>
-<p class="note">ยอดสิ้นงวด ÷ ยอดขายหรือต้นทุนของไตรมาส × 91 วัน — บริษัทอาจคิดด้วยยอดเฉลี่ย ตัวเลขจึงต่างจากที่บริษัทรายงานได้</p>
+{wc_block}
 <h3>กระแสเงินสด</h3>
 <table><thead><tr><th>รายการ</th><th class="n">งวดนี้</th><th class="n">ปีก่อน</th></tr></thead><tbody>{"".join(cf_html)}</tbody></table>
 <h3>อ่านงบแล้วเห็นอะไร</h3>{sec("สรุปงบ")}</section>
 
-<section><h2>② ผู้บริหารพูด vs งบจริง</h2>
+<section><h2>② จับผิด — ผู้บริหารพูด vs งบจริง</h2>
+<h3>②.1 ตัวเลขที่ผู้บริหารพูด เทียบงบ</h3>
 <p class="note">เรียงจากข้อที่ต้องระวังก่อน · คลิกเวลาเพื่อเปิดคลิปตรงจุดนั้น · คำพูดเป็นเสียงถอดอัตโนมัติ (สะกดเพี้ยนได้)</p>
 <table><thead><tr><th>ผล</th><th>ที่มา</th><th>คำพูด และเหตุผล</th><th class="n">ที่พูด</th><th class="n">ในงบ</th></tr></thead>
 <tbody>{"".join(claim_rows) or '<tr><td colspan="5">ไม่มีคำกล่าว</td></tr>'}</tbody></table>
-<h3>สิ่งที่ไม่ได้พูด — ตัวเลขที่แย่ลงชัดในงบ</h3>
+<h3>②.2 สิ่งที่ไม่ได้พูด — ตัวเลขที่แย่ลงชัดในงบ</h3>
 {"".join(flags_html) or '<p class="note">ไม่พบสัญญาณที่เข้าเกณฑ์</p>'}
-<h3>สรุป: ผู้บริหารพูดตรงแค่ไหน</h3>{sec("ผู้บริหารพูดตรงแค่ไหน")}</section>
+<h3>สรุป: ผู้บริหารพูดตรงแค่ไหน</h3>{sec("ผู้บริหารพูดตรงแค่ไหน")}
+<h3>②.3 ตรวจผู้บริหาร (ข้อเท็จจริง vs โม้ · เป้ามีเหตุผลรองรับไหม · ผลงานในอดีต · การถือหุ้น)</h3>{sec("ตรวจผู้บริหาร")}</section>
 
 <section><h2>③ สัญญาที่ต้องตามดู</h2>
 <table><thead><tr><th>ที่มา</th><th>เป้า / แนวทางที่ให้ไว้</th><th class="n">ตรวจเมื่อ</th></tr></thead>
@@ -426,7 +536,7 @@ def stock_report(a) -> int:
 
     # ไฟล์ตรวจตัวเลข: บทสรุปที่ AI เขียน + ตัวเลขทุกตัวในส่วนสรุปงบ (ไม่รวมคำพูดผู้บริหาร = สิ่งที่พูด ไม่ใช่ข้อเท็จจริง)
     # บรรทัดที่กำกับ [คำพูด] = ตัวเลขที่ผู้บริหารพูด/เป้า (อ้างอิงเทปหรือ MD&A ใน claims.csv) ไม่ใช่ข้อเท็จจริงจากงบ → ไม่ตรวจกับ FACTS
-    for k in ("บรรทัดเดียว", "สรุปงบ", "ผู้บริหารพูดตรงแค่ไหน", "ต้องเชื่ออะไร", "เงื่อนไขเปลี่ยนใจ"):
+    for k in ("บรรทัดเดียว", "สรุปงบ", "ผู้บริหารพูดตรงแค่ไหน", "ตรวจผู้บริหาร", "ต้องเชื่ออะไร", "เงื่อนไขเปลี่ยนใจ"):
         if summ.get(k):
             check_lines += ["", f"## {k}"] + [ln for ln in summ[k].splitlines() if "[คำพูด]" not in ln]
     (work / "report-check.md").write_text("\n".join(check_lines) + "\n", encoding="utf-8")
@@ -442,7 +552,14 @@ def stock_report(a) -> int:
                         "net_margin": val("net_margin"), "inventory_days": val("inventory_days"),
                         "receivable_days": val("receivable_days"), "ccc": val("ccc"),
                         "ocf_to_np": val("ocf_to_np"), "de_ratio": val("de_ratio", "BS"),
-                        "revenue": val("revenue"), "net_profit": val("net_profit")},
+                        "revenue": val("revenue"), "net_profit": val("net_profit"),
+                        # ธุรกิจสินเชื่อ
+                        "loan_growth_yoy": val("loan_growth_yoy", "BS"), "yield": val("yield"), "cof": val("cof"),
+                        "spread": val("spread"), "ci_ratio": val("ci_ratio"), "credit_cost": val("credit_cost"),
+                        "npl_ratio": val("npl_ratio", "BS"), "stage2_ratio": val("stage2_ratio", "BS"),
+                        "coverage": val("coverage", "BS"), "ibd_to_equity": val("ibd_to_equity", "BS"),
+                        "ppop_yoy": val("ppop", mode="yoy"), "net_loans": val("net_loans", "BS")},
+            "sector": sector,
             "unsaid": [u for u in unsaid if u["said"] == "n"]}
     (work / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"เขียน {out} · คำกล่าว {len(final)} ข้อ ({' · '.join(f'{k} {v}' for k, v in cnt.items())})")
@@ -451,6 +568,22 @@ def stock_report(a) -> int:
 
 
 # ── หน้าเทียบกลุ่ม ───────────────────────────────────────────────────
+
+PEER_METRICS_NONBANK = [
+    ("loan_growth_yoy", "พอร์ตสินเชื่อโต (YoY)", "%", "สินเชื่อสุทธิ สิ้นไตรมาสนี้ ÷ ไตรมาสเดียวกันปีก่อน − 1", True),
+    ("net_profit_yoy", "กำไรสุทธิโต (YoY)", "%", "กำไรส่วนของบริษัทใหญ่ · ฐานขาดทุนคิด % ไม่ได้", True),
+    ("ppop_yoy", "กำไรก่อนสำรองโต (YoY)", "%", "ความสามารถทำเงินก่อนตั้งสำรองหนี้", True),
+    ("yield", "Yield ผลตอบแทนสินเชื่อ", "%", "ดอกเบี้ยรับ ×4 ÷ สินเชื่อเฉลี่ย", True),
+    ("cof", "ต้นทุนเงิน", "%", "ต้นทุนทางการเงิน ×4 ÷ หนี้มีดอกเบี้ยเฉลี่ย · ยิ่งต่ำยิ่งดี", False),
+    ("spread", "ส่วนต่าง Spread", "%", "Yield − ต้นทุนเงิน", True),
+    ("ci_ratio", "ค่าใช้จ่ายต่อรายได้", "%", "Cost-to-income · ยิ่งต่ำยิ่งดี", False),
+    ("credit_cost", "Credit cost", "%", "ค่าใช้จ่ายสำรอง ×4 ÷ สินเชื่อเฉลี่ย · ยิ่งต่ำยิ่งดี", False),
+    ("npl_ratio", "NPL (Stage 3)", "%", "Stage 3 ÷ ลูกหนี้ก่อนหักค่าเผื่อ · ยิ่งต่ำยิ่งดี", False),
+    ("stage2_ratio", "Stage 2", "%", "สัญญาณเตือนก่อนเป็น NPL · ยิ่งต่ำยิ่งดี", False),
+    ("coverage", "Coverage", "%", "ค่าเผื่อ ÷ NPL · ยิ่งสูงกันชนยิ่งหนา", True),
+    ("ibd_to_equity", "หนี้มีดอกเบี้ยต่อทุน", "เท่า", "ยิ่งต่ำยิ่งมีที่ว่างกู้เพิ่ม", False),
+    ("score", "พูดตรง (✅ ÷ ข้อที่ตัดสินได้)", "%", "จากการตรวจคำพูด Oppday + MD&A", True),
+]
 
 PEER_METRICS = [
     ("revenue_yoy", "รายได้โต (YoY)", "%", "ไตรมาสนี้เทียบไตรมาสเดียวกันปีก่อน", True),
@@ -515,13 +648,16 @@ def peer_page(a) -> int:
             print(f"ไม่พบ {p} — รันโหมด stock ของตัวนั้นก่อน")
             return 1
         datas.append((Path(w), json.loads(p.read_text(encoding="utf-8"))))
-    colors = ["var(--s1)", "var(--s2)", "var(--s3)"]
-    if len(datas) > 3:
-        print("⚠️ เกิน 3 บริษัท: ชุดสีผ่านเกณฑ์ตาบอดสีแค่ 3 สีแรก — แบ่งเป็นหลายหน้า")
-        return 1
+    many = len(datas) > 3
+    # ≤3 บริษัท: สีประจำบริษัท (3 สีแรกผ่านเกณฑ์ตาบอดสี) · >3 บริษัท: สีเดียว เรียงจากดีไปแย่ ชื่อหุ้นบอกตัวตน
+    colors = ["var(--s1)"] * len(datas) if many else ["var(--s1)", "var(--s2)", "var(--s3)"]
+    sector = getattr(a, "sector", "auto")
+    if sector == "auto":
+        sector = datas[0][1].get("sector", "it")
+    metrics_list = PEER_METRICS_NONBANK if sector == "nonbank" else PEER_METRICS
     summ = read_summary(Path(a.summary)) if a.summary else {}
     charts, trows = [], []
-    for key, title, unit, cap, _good in PEER_METRICS:
+    for key, title, unit, cap, good in metrics_list:
         items = []
         for (w, d), col in zip(datas, colors):
             if key == "score":
@@ -532,15 +668,19 @@ def peer_page(a) -> int:
                 v = m["v"] if m else None
                 tip = f"{d['ticker']}: {nfmt(v, unit)} {unit} · {m['formula']} · {m['refs']}" if m else f"{d['ticker']}: ไม่มีข้อมูล"
             items.append((d["ticker"], col, v, tip))
-        charts.append(bar_chart(key, title, unit, cap, items))
+        chart_items = items
+        if many:   # เรียงจากดีไปแย่ตามทิศของตัวชี้วัด · ไม่มีข้อมูลไว้ท้าย
+            chart_items = sorted(items, key=lambda it: (it[2] is None, -(it[2] or 0) if good else (it[2] or 0)))
+        charts.append(bar_chart(key, title, unit, cap + (" · เรียงจากดีไปแย่" if many else ""), chart_items))
         cells = "".join(f'<td class="n" tabindex="0" data-tip="{E(t)}">{nfmt(v, unit) if v is not None else "—"}</td>'
                         for _, _, v, t in items)
         trows.append(f"<tr><td>{E(title)} <span class='src'>({E(unit)})</span></td>{cells}</tr>")
     for mark, th in (("✅", "ตรง"), ("🟡", "ตรงแต่เลือกพูด / ต่างนิยาม"), ("❌", "ไม่ตรง"), ("⬜", "ตรวจไม่ได้"), ("🔭", "สัญญาอนาคต")):
         cells = "".join(f'<td class="n">{d["counts"].get(mark, 0)}</td>' for _, d in datas)
         trows.append(f"<tr><td>{mark} {E(th)} <span class='src'>(ข้อ)</span></td>{cells}</tr>")
-    legend = "".join(f'<span><span class="key" style="background:{c}"></span>{E(d["ticker"])}</span>'
-                     for (_, d), c in zip(datas, colors))
+    legend = ("<span>ทุกแท่งสีเดียวกัน ชื่อหุ้นอยู่หน้าแท่ง · เรียงจากดีไปแย่</span>" if many else
+              "".join(f'<span><span class="key" style="background:{c}"></span>{E(d["ticker"])}</span>'
+                      for (_, d), c in zip(datas, colors)))
     heads = "".join(f'<th class="n">{E(d["ticker"])}</th>' for _, d in datas)
     # รายงานรายตัวต้องก๊อปไว้โฟลเดอร์เดียวกับหน้านี้ ชื่อ <TICKER>-earnings-check-<งวด>.html
     links = " · ".join(f'<a href="{E(d["ticker"])}-earnings-check-{E(d["period"])}.html">{E(d["ticker"])}</a>'
@@ -552,7 +692,7 @@ def peer_page(a) -> int:
     page = f"""<!DOCTYPE html>
 <html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>เทียบกลุ่ม {E(a.group)} · {E(period_th(a.period))}</title><style>{CSS}</style></head><body><main>
-<header><h1>เทียบกลุ่ม{E(a.group)} — ใครกำไรคุณภาพดีกว่า ใครพูดตรงกว่า</h1>
+<header><h1>เทียบกลุ่ม {E(a.group)} — ใครกำไรคุณภาพดีกว่า ใครพูดตรงกว่า</h1>
 <p class="sub">{" · ".join(E(d["ticker"] + " " + d["company"]) for _, d in datas)} · {E(period_th(a.period))}</p>
 <div class="tags"><span class="tag">earnings-check</span><span class="tag">สร้าง {E(th_date(date.today().isoformat()))}</span>
 <span class="tag">เพื่อการศึกษา ไม่ใช่คำแนะนำซื้อขาย</span></div></header>
@@ -584,11 +724,13 @@ def main() -> int:
     s.add_argument("--vault", required=True)
     s.add_argument("--work", required=True)
     s.add_argument("--out", required=True)
+    s.add_argument("--sector", default="auto", choices=["auto", "nonbank", "it", "general"])
     p = sub.add_parser("peer")
     p.add_argument("--group", required=True)
     p.add_argument("--period", required=True)
     p.add_argument("--works", nargs="+", required=True)
     p.add_argument("--summary")
+    p.add_argument("--sector", default="auto", choices=["auto", "nonbank", "it", "general"])
     p.add_argument("--out", required=True)
     a = ap.parse_args()
     a.ticker = getattr(a, "ticker", "").upper() if getattr(a, "ticker", None) else None

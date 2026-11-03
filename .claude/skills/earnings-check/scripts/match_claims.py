@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from facts_lib import Facts, find_files, load  # noqa: E402
+from facts_lib import Facts, find_files, find_yago, load  # noqa: E402
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -31,20 +31,31 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-RATIO = {"gross_margin", "net_margin", "sga_to_rev", "op_margin", "fx_share_pbt", "other_income_share_pbt"}
+RATIO = {"gross_margin", "net_margin", "sga_to_rev", "op_margin", "fx_share_pbt", "other_income_share_pbt",
+         "yield", "cof", "spread", "nim", "credit_cost", "ci_ratio", "npl_ratio", "stage2_ratio", "coverage"}
 # ตัวเลขที่ "ยิ่งสูงยิ่งดี" (พูดสูงกว่าจริง = ปัดเข้าข้าง) · ที่เหลือในชุด BAD ยิ่งต่ำยิ่งดี
 GOOD = {"revenue", "total_revenue", "gross_profit", "gross_margin", "operating_profit", "ebit", "op_margin",
-        "net_profit", "net_margin", "eps_basic", "ocf", "ocf_to_np", "cash", "share_assoc", "other_income"}
+        "net_profit", "net_margin", "eps_basic", "ocf", "ocf_to_np", "cash", "share_assoc", "other_income",
+        "net_loans", "loan_growth_qoq", "loan_growth_ytd", "interest_income", "fee_income", "ppop", "yield",
+        "spread", "nim", "coverage"}
 BAD = {"sga", "sga_to_rev", "selling_exp", "admin_exp", "finance_cost", "inventory_days", "receivable_days",
-       "ccc", "net_debt", "de_ratio", "st_debt", "cogs_total"}
+       "ccc", "net_debt", "de_ratio", "st_debt", "cogs_total", "cof", "credit_cost", "ecl", "ci_ratio", "npl_ratio",
+       "stage2_ratio", "ib_debt", "ibd_to_equity", "st_debt_share"}
 # ตัวเลขที่แต่ละบริษัทคิดได้หลายวิธี (ยอดเฉลี่ย vs ยอดปลายงวด · 90 vs 91 วัน) → ผ่อนเกณฑ์ และไม่ฟันว่า ❌ ถ้าห่างไม่มาก
-METHOD_SENSITIVE = {"inventory_days", "receivable_days", "payable_days", "ccc", "ocf_to_np", "de_ratio", "net_debt"}
+METHOD_SENSITIVE = {"inventory_days", "receivable_days", "payable_days", "ccc", "ocf_to_np", "de_ratio", "net_debt",
+                    # อัตราส่วน Non-bank: บริษัทคิดด้วยยอดเฉลี่ยรายเดือน/ยอดก่อนหักค่าเผื่อ ต่างจากที่คิดจากงบได้
+                    "yield", "cof", "spread", "nim", "credit_cost", "ci_ratio", "npl_ratio", "stage2_ratio", "coverage",
+                    "ibd_to_equity", "st_debt_share"}
 ALT_METRIC = {
     "net_profit": [("profit_total", "กำไรสุทธิทั้งก้อน (รวมส่วนของผู้ถือหุ้นส่วนน้อย)")],
     "revenue": [("total_revenue", "รายได้รวม (รวมรายได้อื่น)")],
     "total_revenue": [("revenue", "รายได้จากการขายและบริการ (ไม่รวมรายได้อื่น)")],
     "sga_to_rev": [("sga_to_total_revenue", "ค่าใช้จ่ายต่อรายได้รวม")],
     "op_margin": [("op_margin_total", "กำไรจากการดำเนินงานต่อรายได้รวม")],
+    "npl_ratio": [("npl_incl_poci", "NPL รวมลูกหนี้ด้อยค่าตั้งแต่ซื้อ (POCI)")],
+    "coverage": [("coverage_incl_poci", "Coverage เทียบ Stage 3 + POCI")],
+    # ธุรกิจสินเชื่อรายงานพอร์ตเป็นยอดก่อนหักค่าเผื่อ (gross) เป็นปกติ → ตรงกับ gross = ✅ ไม่ใช่การเลือกพูด
+    "net_loans": [("gross_loans", "ยอดลูกหนี้ก่อนหักค่าเผื่อหนี้สงสัยจะสูญ (gross = Stage 1+2+3 ในหมายเหตุ)", "✅")],
 }
 BASIS_TH = {"consolidated": "งบรวม", "separate": "งบเฉพาะกิจการ (งบเดี่ยว)", "single": "งบการเงิน"}
 OUT_FIELDS = ["id", "source", "loc", "link", "quote", "metric", "period", "kind", "compare", "claimed", "unit",
@@ -101,6 +112,11 @@ class Judge:
         mode = c.get("compare") or "yoy"
         if kind in ("level", "margin"):
             return F.metric(m, pt, "cur", basis)
+        if m == "gross_loans" and kind in ("growth", "direction"):
+            return F.metric("gross_loan_growth_ytd", "BS", "cur", basis) if mode == "ytd" else None
+        if m == "net_loans" and kind in ("growth", "direction"):
+            # "พอร์ตโต x%" → ใช้ยอดเทียบที่ถูกงวด (ไตรมาสก่อน / สิ้นปีก่อน / ไตรมาสเดียวกันปีก่อน)
+            return F.metric({"qoq": "loan_growth_qoq", "ytd": "loan_growth_ytd"}.get(mode, "loan_growth_yoy"), "BS", "cur", basis)
         if kind in ("growth", "margin_chg", "direction"):
             if pt == "BS":
                 return F.growth(m, "BS", basis, mode)   # yoy ของยอดงบดุล = เทียบสิ้นปีก่อน
@@ -208,13 +224,28 @@ class Judge:
                 why += " — ผู้บริหารไม่ได้บอกว่าเป็นงบไหน"
             return {**out, "verdict": "🟡", "reason": why, "fact_refs": out["fact_refs"] + " ; " + alt_act.ref_text()}
         # ลองบรรทัดใกล้เคียงที่ผู้บริหารมักเรียกปนกัน (กำไรรวมส่วนน้อย · รายได้รวม vs รายได้ขาย)
-        for alt_m, alt_th in ALT_METRIC.get(metric, []):
+        for alt in ALT_METRIC.get(metric, []):
+            alt_m, alt_th = alt[0], alt[1]
             alt_c = self.actual({**c, "metric": alt_m}, basis)
             if alt_c is not None and abs(claimed - alt_c.value) <= tol(alt_c.value):
+                if len(alt) > 2 and alt[2] == "✅":
+                    return {**out, "verdict": "✅",
+                            "reason": f"ตรงกับ{alt_th} ({fmt(alt_c.value, alt_c.unit)}) · ยอดสุทธิในงบ = {fmt(act.value, act.unit)}",
+                            "fact_refs": out["fact_refs"] + " ; " + alt_c.ref_text()}
                 return {**out, "verdict": "🟡",
                         "reason": f"ตัวเลขตรงกับ{alt_th} ({fmt(alt_c.value, alt_c.unit)}) ไม่ใช่บรรทัดที่บันทึกไว้ "
                                   f"({fmt(act.value, act.unit)}) — คนละนิยาม ผู้ฟังควรรู้ว่าเป็นตัวไหน",
                         "fact_refs": out["fact_refs"] + " ; " + alt_c.ref_text()}
+        if kind == "growth" and not c.get("compare"):
+            # ผู้บริหารไม่บอกฐานเทียบ → ลองฐานอื่น ถ้าตรงก็บอกว่าตรงกับฐานไหน (ผู้ฟังเข้าใจผิดได้ จึงเป็น 🟡)
+            names = {"yoy": "ไตรมาสเดียวกันปีก่อน", "qoq": "ไตรมาสก่อน", "ytd": "สิ้นปีก่อน"}
+            for alt_mode in ("ytd", "qoq"):
+                alt_c = self.actual({**c, "compare": alt_mode}, basis)
+                if alt_c is not None and abs(claimed - alt_c.value) <= tol(alt_c.value):
+                    return {**out, "verdict": "🟡",
+                            "reason": f"ผู้บริหารไม่บอกฐานเทียบ · ตัวเลขตรงกับการเทียบ{names[alt_mode]} "
+                                      f"({fmt(alt_c.value, alt_c.unit)}%) · ถ้าเทียบ{names['yoy']} = {fmt(act.value, act.unit)}%",
+                            "fact_refs": out["fact_refs"] + " ; " + alt_c.ref_text()}
         if sign_flip:
             return {**out, "verdict": "❌", "reason": f"ทิศทางกลับกัน: พูด {c['claimed']} แต่{btxt}ได้ {fmt(act.value, act.unit)}"}
         if metric in METHOD_SENSITIVE and kind in ("level", "margin"):
@@ -269,7 +300,8 @@ def unsaid(F: Facts, claims: list):
             extra = f" (รายได้ 6 เดือนโต {ytd.value:.1f}%)" if ytd else ""
             flags.append((f"{th}เพิ่มจากสิ้นปีก่อน", f"+{b.value:.1f}%{extra}", rel, b))
     ocf, ratio = m("ocf", "6M"), F.metric("ocf_to_np", "3M", "cur", None)
-    if ocf and (ocf.value < 0 or (ratio and ratio.value < 0.5)):
+    lender = F.metric("net_loans", "BS", "cur", None) is not None   # ธุรกิจสินเชื่อ: เงินปล่อยกู้อยู่ในกระแสเงินสดดำเนินงาน → ไม่ใช้สัญญาณนี้
+    if ocf and not lender and (ocf.value < 0 or (ratio and ratio.value < 0.5)):
         flags.append(("เงินสดจากการดำเนินงาน (6 เดือน) ต่ำกว่ากำไรมาก",
                       f"{ocf.value:,.0f} ล้านบาท" + (f" = {ratio.value:.2f} เท่าของกำไร" if ratio else ""),
                       {"ocf", "ocf_to_np"}, ocf))
@@ -280,8 +312,56 @@ def unsaid(F: Facts, claims: list):
     if fc and fc.value > 20:
         flags.append(("ต้นทุนทางการเงินเพิ่มขึ้น", f"+{fc.value:.1f}%", {"finance_cost"}, fc))
     nd = F.growth("net_debt", "BS", None, "yoy")
-    if nd and nd.value > 20:
+    # ธุรกิจสินเชื่อ: เงินกู้คือวัตถุดิบ (ยืมมาปล่อยต่อ) และเงินที่ออกหุ้นกู้มามักพักในเงินลงทุนระยะสั้นที่ไม่ถูกหักออก
+    # → ใช้สัญญาณ IBD/E และหนี้ระยะสั้นของกลุ่ม Non-bank ด้านล่างแทน
+    if nd and nd.value > 20 and not lender:
         flags.append(("หนี้สุทธิเพิ่มจากสิ้นปีก่อน", f"+{nd.value:.1f}%", {"net_debt", "st_debt", "de_ratio"}, nd))
+
+    # ── สัญญาณเตือนของธุรกิจสินเชื่อ (Non-bank) ── ดู reference/sectors/nonbank.md
+    def nb(name, where="cur"):
+        if where == "yago":
+            return F.metric(name, "3M" if name not in ("npl_ratio", "stage2_ratio", "coverage") else "BS", "cur", None, F.yago) if F.yago else None
+        pt = "BS" if name in ("npl_ratio", "stage2_ratio", "coverage", "loan_growth_yoy", "st_debt_share") else "3M"
+        return F.metric(name, pt, where, None)
+
+    def diff(a, b):
+        return None if a is None or b is None else a.value - b.value
+
+    lg = nb("loan_growth_yoy")
+    if lg and lg.value < 0:
+        flags.append(("พอร์ตสินเชื่อหดตัวจากไตรมาสเดียวกันปีก่อน", f"{lg.value:.1f}%",
+                      {"net_loans", "loan_growth_yoy", "loan_growth_qoq", "loan_growth_ytd"}, lg))
+    cc, cc0 = nb("credit_cost"), nb("credit_cost", "yago")
+    d = diff(cc, cc0)
+    if d is not None and d > 0.5:
+        flags.append(("Credit cost สูงขึ้นจากปีก่อน", f"{cc0.value:.2f}% → {cc.value:.2f}%", {"credit_cost", "ecl"}, cc))
+    for key, th, thr, rel in (("npl_ratio", "NPL (Stage 3) เพิ่มจากสิ้นปีก่อน", 0.2, {"npl_ratio", "npl_incl_poci"}),
+                              ("stage2_ratio", "ลูกหนี้ Stage 2 เพิ่ม (สัญญาณเตือนก่อนเป็น NPL)", 0.5, {"stage2_ratio"})):
+        c, c0 = nb(key), nb(key, "prior")
+        d = diff(c, c0)
+        if d is not None and d > thr:
+            flags.append((th, f"{c0.value:.2f}% → {c.value:.2f}%", rel, c))
+    cv, cv0 = nb("coverage"), nb("coverage", "prior")
+    d = diff(cv, cv0)
+    if d is not None and d < -5:
+        flags.append(("Coverage ลดลง (กันชนหนี้เสียบางลง)", f"{cv0.value:.0f}% → {cv.value:.0f}%", {"coverage", "coverage_incl_poci"}, cv))
+    if cv and cv.value < 80:
+        flags.append(("Coverage ต่ำกว่า 80% ของ NPL", f"{cv.value:.0f}%", {"coverage", "coverage_incl_poci"}, cv))
+    cf, cf0 = nb("cof"), nb("cof", "yago")
+    d = diff(cf, cf0)
+    if d is not None and d > 0.3:
+        flags.append(("ต้นทุนเงินสูงขึ้นจากปีก่อน", f"{cf0.value:.2f}% → {cf.value:.2f}%", {"cof", "spread", "nim", "finance_cost"}, cf))
+    pp = F.growth("ppop", "3M", None, "yoy")
+    if pp and pp.value < 0:
+        flags.append(("กำไรก่อนสำรอง (PPOP) ลดลง", f"{pp.value:.1f}%", {"ppop"}, pp))
+    npg, ecg = F.growth("net_profit", "3M", None, "yoy"), F.growth("ecl", "3M", None, "yoy")
+    if npg and ecg and pp and npg.value > 10 and ecg.value < -10 and pp.value < npg.value - 10:
+        flags.append(("กำไรโตเพราะตั้งสำรองน้อยลง มากกว่าธุรกิจโต",
+                      f"กำไร +{npg.value:.0f}% · PPOP {pp.value:+.0f}% · ค่าใช้จ่ายสำรอง {ecg.value:+.0f}%", {"ecl", "credit_cost"}, ecg))
+    sd = nb("st_debt_share")
+    if sd and sd.value > 50 and F.metric("net_loans", "BS", "cur", None):
+        flags.append(("หนี้ครบกำหนดภายใน 1 ปีเกินครึ่งของหนี้มีดอกเบี้ย", f"{sd.value:.0f}%",
+                      {"st_debt_share", "ib_debt", "debentures"}, sd))
 
     rows = []
     for title, detail, rel, calc in flags:
@@ -307,7 +387,8 @@ def main() -> int:
     if not main_f:
         print(f"ไม่พบงบ {a.period} ใน {vault}")
         return 1
-    F = Facts(load(a.facts), main_f.name, prev_f.name if prev_f else None)
+    yago = find_yago(vault, a.period)
+    F = Facts(load(a.facts), main_f.name, prev_f.name if prev_f else None, yago.name if yago else None)
     video = ""
     tr = sorted(vault.glob(f"*_Oppday_{a.period}*.md"))
     if tr:

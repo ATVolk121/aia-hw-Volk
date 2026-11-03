@@ -11,6 +11,9 @@
 | [SYNEX-earnings-check-Q2-2569.html](SYNEX-earnings-check-Q2-2569.html) | รายงานรายตัว SYNEX |
 | [ADVICE-earnings-check-Q2-2569.html](ADVICE-earnings-check-Q2-2569.html) | รายงานรายตัว ADVICE |
 | [CPALL-earnings-check-Q2-2569.html](CPALL-earnings-check-Q2-2569.html) | รายงาน CPALL (ชุดทดสอบ — มีตัวเลขที่ตรวจด้วยมือไว้ก่อนแล้ว) |
+| [peer-nonbank-2026-11-03.html](peer-nonbank-2026-11-03.html) | **หน้าเทียบกลุ่ม Non-bank** 6 บริษัท — 13 ตัวชี้วัด (พอร์ตโต · PPOP · yield · ต้นทุนเงิน · NPL · Stage 2 · Coverage …) เรียงจากดีไปแย่ + คะแนนพูดตรง |
+| [MTC](MTC-earnings-check-Q2-2569.html) · [SAWAD](SAWAD-earnings-check-Q2-2569.html) · [THANI](THANI-earnings-check-Q2-2569.html) · [HENG](HENG-earnings-check-Q2-2569.html) · [SCAP](SCAP-earnings-check-Q2-2569.html) · [AMANAH](AMANAH-earnings-check-Q2-2569.html) | รายงานรายตัวกลุ่ม Non-bank (มีหัวข้อ ②.3 ตรวจผู้บริหาร: ผู้ถือหุ้น · แบบ 59 · เป้าเก่าทำได้ไหม) |
+| [screenshot-peer-nonbank.png](screenshot-peer-nonbank.png) · [screenshot-HENG.png](screenshot-HENG.png) | ภาพหน้าจอกลุ่ม Non-bank |
 | [screenshot-peer.png](screenshot-peer.png) · [screenshot-SIS.png](screenshot-SIS.png) | ภาพหน้าจอ |
 | `<TICKER>-FACTS.csv` | ตัวเลขจากงบทุกตัว พร้อม ไฟล์ · ชีต · เซลล์ |
 | `<TICKER>-claims.csv` | คำพูดผู้บริหารทีละข้อ + ผลเทียบงบจากสคริปต์ |
