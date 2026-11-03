@@ -206,6 +206,10 @@ class Facts:
     def growth(self, name, ptype="3M", basis=None, mode="yoy"):
         """yoy = งวดนี้เทียบปีก่อน (คอลัมน์เปรียบเทียบในงบเดียวกัน) · qoq = เทียบไตรมาสก่อน (ต้องมี prev_q_file)
         ตัวเลขที่เป็น % (อัตรากำไร) คืนผลต่างเป็น "จุด" · ตัวเลขอื่นคืน % การเปลี่ยนแปลง"""
+        if mode == "yoy" and name in ("inventory_days", "receivable_days", "payable_days", "ccc"):
+            # งบไตรมาสมีงบดุลเปรียบเทียบแค่ ณ สิ้นปีก่อน ไม่ใช่ไตรมาสเดียวกันปีก่อน
+            # เอาสต็อกสิ้นปีมาหารยอดขายไตรมาสปีก่อน = คนละช่วงเวลา → ไม่คำนวณ (ใช้ qoq แทนได้)
+            return None
         cur = self.metric(name, ptype, "cur", basis)
         if mode == "yoy":
             prev = self.metric(name, ptype, "prior", basis)
