@@ -60,7 +60,7 @@
 | `.claude/skills/earnings-check/SKILL.md` | ขั้นตอนของ skill `/earnings-check` (11 ขั้น ตั้งแต่ดึงเอกสารถึงเข้าคลังความรู้) |
 | `.claude/skills/earnings-check/scripts/` | `fetch_mda.py` · `fetch_oppday.py` · `vault_intake.py` · `fetch_r59.py` (ดึงเอกสาร + แบบ 59) · `doc_to_txt.ps1` (แปลง .doc ด้วย Word) · `fs_facts.py` · `facts_lib.py` · `merge_notes.py` (ตัวเลขจากงบ + หมายเหตุ) · `match_claims.py` (ตัดสินคำพูด) · `build_report.py` (รายงาน) |
 | `.claude/skills/earnings-check/reference/claims-format.md` | แบบฟอร์มบันทึกคำพูดผู้บริหาร 1 แถว = 1 คำกล่าว |
-| `.claude/skills/earnings-check/reference/sectors/` | คู่มือรายกลุ่ม: `nonbank.md` (จากคลิป Workshop + การรันจริง) · `management.md` (ตรวจผู้บริหาร จากคลิป EP.7) |
+| `.claude/skills/earnings-check/reference/sectors/` | คู่มือรายกลุ่ม: `nonbank.md` (จากคลิป Workshop + การรันจริง) · `it-distribution.md` (จากคลิป SIS · Synex · SPVI + การรันจริง) · `management.md` (ตรวจผู้บริหาร จากสไลด์และคลิป EP.7) |
 | `.claude/skills/earnings-check/tests/test_cpall.py` | ชุดทดสอบตัวดึงตัวเลขกับงบ CPALL (ต้องผ่าน 50/50) |
 | `.claude/agents/kep-lek.md` · `check-jing.md` | ทีม agent: เก็บเลข (Sonnet ดึงคำพูด) · ตรวจจริง (Opus ตรวจซ้ำกับต้นฉบับ) |
 
