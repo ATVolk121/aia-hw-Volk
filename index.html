@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>earnings-check · ผู้บริหารพูด vs งบจริง · การบ้าน AI Investor Alpha (Volk)</title>
+<style>
+:root{color-scheme:light;--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--s1:#2a78d6;--chip:#f0efec}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--page:#0d0d0d;--surface:#1a1a19;--ink:#f0efec;
+--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--s1:#3987e5;--chip:#2c2c2a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI","Leelawadee UI","Noto Sans Thai",sans-serif}
+main{max-width:1060px;margin:0 auto;padding:28px 20px 60px}
+header h1{font-size:28px;margin:0 0 4px;line-height:1.25}
+header .sub{color:var(--ink2);margin:0}
+section{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:20px 22px;margin:18px 0}
+h2{font-size:20px;margin:0 0 10px}
+.lead{font-size:17px;border-left:4px solid var(--s1);padding:6px 0 6px 12px;margin:14px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0 4px}
+.tile{border:1px solid var(--ring);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.tile .lbl{color:var(--ink2);font-size:13px}
+.tile .val{font-size:26px;font-weight:600;line-height:1.2}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{display:block;border:1px solid var(--ring);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.card:hover,.card:focus{border-color:var(--s1);outline:none}
+.card b{display:block;font-size:17px;color:var(--s1)}
+.card span{color:var(--ink2);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+th{color:var(--ink2);font-weight:600;font-size:13px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody td:first-child{white-space:nowrap}
+.wrap{overflow-x:auto}
+a{color:var(--s1)}
+ul{margin:6px 0;padding-left:20px}
+li{margin:3px 0}
+.note{color:var(--ink2);font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:24px}
+</style></head>
+<body><main>
+
+<header>
+<h1>earnings-check — ผู้บริหารพูดตรงกับงบแค่ไหน</h1>
+<p class="sub">การบ้าน AI Investor Alpha · กลุ่ม 1 อ่านงบ / Oppday / Earnings · Volk · งบไตรมาส 2/2569</p>
+</header>
+
+<p class="lead"><b>ผู้บริหารไทยแทบไม่พูดตัวเลขผิด แต่ "เลือกพูด" เกือบทุกบริษัท</b> — skill <code>/earnings-check</code> ดึงงบ MD&amp;A และเทป Oppday อัตโนมัติ แล้วเทียบทุกคำพูดของผู้บริหารกับตัวเลขในงบ</p>
+
+<div class="tiles">
+<div class="tile"><div class="lbl">บริษัทที่ตรวจ</div><div class="val">10</div></div>
+<div class="tile"><div class="lbl">คำพูดที่ตรวจ</div><div class="val">471</div></div>
+<div class="tile"><div class="lbl">กลุ่มธุรกิจ</div><div class="val">2</div></div>
+<div class="tile"><div class="lbl">ตัวเลขที่สาวกลับถึงงบได้</div><div class="val">100%</div></div>
+</div>
+
+<section>
+<h2>เริ่มดูที่นี่</h2>
+<div class="cards">
+<a class="card" href="output/peer-nonbank-2026-11-03.html"><b>หน้าเทียบกลุ่ม Non-bank →</b><span>MTC · SAWAD · THANI · HENG · SCAP · AMANAH — พอร์ตโต · PPOP · NPL · Stage 2 · Coverage เรียงจากดีไปแย่ + คะแนนพูดตรง</span></a>
+<a class="card" href="output/peer-it-distribution-2026-11-03.html"><b>หน้าเทียบกลุ่มจัดจำหน่ายไอที →</b><span>SIS · SYNEX · ADVICE — รายได้ อัตรากำไร วันสต็อก เงินสดเทียบกำไร หนี้มีดอกเบี้ยต่อทุน + สิ่งที่ไม่ได้พูด</span></a>
+</div>
+</section>
+
+<section>
+<h2>ผลรายบริษัท (หลังด่านตรวจ)</h2>
+<p class="note">พูดตรง = ✅ ÷ (✅ + 🟡 + ❌) · กดชื่อหุ้นเพื่อเปิดรายงานเต็ม (มีนาทีในเทป · หน้าใน MD&amp;A · เซลล์ในงบ ทุกข้อ)</p>
+<div class="wrap"><table>
+<thead><tr><th>หุ้น</th><th class="n">✅ ตรง</th><th class="n">🟡 เลือกพูด</th><th class="n">❌ ไม่ตรง</th><th class="n">พูดตรง</th><th>ข้อที่ควรรู้</th></tr></thead>
+<tbody>
+<tr><td><a href="output/MTC-earnings-check-Q2-2569.html">MTC</a></td><td class="n">33</td><td class="n">1</td><td class="n">0</td><td class="n">97%</td><td>พอร์ตโตจริง แต่ NPL ขึ้น 2 ไตรมาสจนเกินเป้าตัวเอง และไม่พูดถึงขาดทุนจากการตัดรายการ 217 ล้านบาท</td></tr>
+<tr><td><a href="output/THANI-earnings-check-Q2-2569.html">THANI</a></td><td class="n">37</td><td class="n">1</td><td class="n">0</td><td class="n">97%</td><td>พูดตรงเกือบทั้งหมด แต่กำไรโตเพราะสำรองลด 70% ขณะที่กำไรก่อนสำรองลด</td></tr>
+<tr><td><a href="output/SIS-earnings-check-Q2-2569.html">SIS</a></td><td class="n">39</td><td class="n">0</td><td class="n">2</td><td class="n">95%</td><td>เปิดเผยเรื่องไม่ดีครบ แต่ CEO บอกว่ากำไรขั้นต้น "เพิ่มขึ้น" ทั้งที่ลดลง · เงินสดจากการดำเนินงาน 6 เดือนติดลบ</td></tr>
+<tr><td><a href="output/HENG-earnings-check-Q2-2569.html">HENG</a></td><td class="n">35</td><td class="n">4</td><td class="n">0</td><td class="n">90%</td><td>"คุณภาพหนี้ดีขึ้น" ทั้งที่ NPL ลดเพราะตัดหนี้ 243 ล้านบาท</td></tr>
+<tr><td><a href="output/AMANAH-earnings-check-Q2-2569.html">AMANAH</a></td><td class="n">14</td><td class="n">2</td><td class="n">1</td><td class="n">82%</td><td>ไม่มี Oppday · NPF ใน MD&amp;A ต่ำกว่าวิธีของบริษัทเอง · เงินกู้ 100% ระยะสั้นจากผู้ถือหุ้นใหญ่</td></tr>
+<tr><td><a href="output/SYNEX-earnings-check-Q2-2569.html">SYNEX</a></td><td class="n">29</td><td class="n">7</td><td class="n">0</td><td class="n">81%</td><td>ตัวเลขถูกแต่เลือกพูดด้านดี · ครึ่งปีหลังต้องโตราว 22% ถึงจะถึงเป้า</td></tr>
+<tr><td><a href="output/ADVICE-earnings-check-Q2-2569.html">ADVICE</a></td><td class="n">21</td><td class="n">6</td><td class="n">0</td><td class="n">78%</td><td>กำไรโต 82.5% แต่ไม่พูดถึงเงินสดที่ได้แค่ 0.28 เท่าของกำไร</td></tr>
+<tr><td><a href="output/SAWAD-earnings-check-Q2-2569.html">SAWAD</a></td><td class="n">24</td><td class="n">14</td><td class="n">0</td><td class="n">63%</td><td>"Coverage 2.21%" เป็นคนละตัว (ต่อ NPL จริง 57%) · NPL ขึ้น 5 ไตรมาสติด</td></tr>
+<tr><td><a href="output/SCAP-earnings-check-Q2-2569.html">SCAP</a></td><td class="n">19</td><td class="n">11</td><td class="n">4</td><td class="n">56%</td><td>บอกว่ายอด NPL ไม่เพิ่ม แต่หมายเหตุงบ +8.1% · MD&amp;A เขียนป้ายตัวเลขผิดงวด</td></tr>
+<tr><td><a href="output/CPALL-earnings-check-Q2-2569.html">CPALL</a> (ชุดทดสอบ)</td><td class="n">38</td><td class="n">0</td><td class="n">0</td><td class="n">100%</td><td>ตัวดึงตัวเลขตรงกับตารางที่ทำด้วยมือ 50/50 บรรทัด</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>ระบบทำอะไร</h2>
+<ul>
+<li><b>ดึงเอกสารเอง</b> — งบ .xlsx + MD&amp;A จาก ก.ล.ต. iDisc · คำบรรยายคลิป Oppday จากช่อง SET Thailand · แบบ 56-1 · แบบ 59 (ผู้บริหารซื้อขายหุ้น)</li>
+<li><b>ตัดสินทุกคำพูด</b> 1 ใน 5 แบบ: ✅ ตรง · 🟡 ตรงแต่เลือกพูด · ❌ ไม่ตรง · ⬜ ตรวจไม่ได้ · 🔭 สัญญาอนาคต (เก็บไว้ตรวจงวดหน้า) + รายการ <b>"สิ่งที่ผู้บริหารไม่ได้พูด"</b></li>
+<li><b>ตรวจตัวผู้บริหาร</b> — ผู้ถือหุ้นใหญ่ · การซื้อขายหุ้นของผู้บริหาร (เขียนเป็นข้อมูลประกอบ ไม่ใช่ตัวชี้ขาด) · เป้าเก่าทำได้จริงไหม · รายการเกี่ยวโยง</li>
+<li><b>ตรวจตัวเองสองชั้น</b> — ทุกตัวเลขในรายงานต้องสาวกลับถึงไฟล์ · ชีต · เซลล์ ของงบได้ และมี AI อีกตัวเปิดต้นฉบับตรวจซ้ำทุกข้อ ❌ 🟡 และสุ่ม ✅</li>
+</ul>
+</section>
+
+<section>
+<h2>อ่านต่อ (เปิดบน GitHub ไม่ต้องล็อกอิน)</h2>
+<table>
+<thead><tr><th>ไฟล์</th><th>คืออะไร</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk#readme">README</a></td><td>สรุปผลงานแบบเต็ม + ลำดับไฟล์ที่ผู้ตรวจควรอ่าน</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/spec.md">spec.md</a></td><td>โจทย์ 5 หัวข้อ: เป้าหมาย · คำถามสำคัญ · แหล่งข้อมูล · ผลลัพธ์ · เกณฑ์สำเร็จ</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/PITCH.md">PITCH.md</a></td><td>นำเสนอ 5 นาที + Backup เกณฑ์ตัดสิน</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/PROCESS.md">PROCESS.md</a></td><td>กระบวนการ: เรียนจากคลิป/ตารางผู้สอน → สร้าง skill → รัน → ตรวจ → ส่ง</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/HOW-TO-USE.md">HOW-TO-USE.md</a></td><td>วิธีใช้ skill และสิ่งที่ทำทีละขั้น</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/prompts.md">prompts.md</a></td><td>บันทึกการทำงานทุกรอบ</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/PROJECT_MEMORY.md">PROJECT_MEMORY.md</a></td><td>ปัญหาที่เจอ · วิธีแก้ · กฎจากบทเรียน</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/help.md">help.md</a></td><td>ติดตรงไหน 3 ข้อ</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/tree/main/output">output/</a></td><td>ไฟล์ตัวเลข (FACTS) · คำพูด (claims) · ผลด่านตรวจ (verify) ของทุกบริษัท เป็น .csv</td></tr>
+<tr><td><a href="https://github.com/ATVolk121/aia-hw-Volk/blob/main/.claude/skills/earnings-check/SKILL.md">SKILL.md</a></td><td>ขั้นตอนจริงของ skill และสคริปต์ทั้งหมด</td></tr>
+</tbody></table>
+</section>
+
+<footer>
+ไม่ใช่คำแนะนำซื้อขาย ไม่มีราคาเป้า · ตัวเลขทั้งหมดมาจากเอกสารที่บริษัทยื่น ก.ล.ต. iDisc / SET และคลิปสาธารณะของ SET · คำพูดจากเทปเป็นเสียงถอดอัตโนมัติ ใช้เป็น "สิ่งที่พูด" เท่านั้น · อัปเดต 5 พ.ย. 2569
+</footer>
+
+</main></body></html>
